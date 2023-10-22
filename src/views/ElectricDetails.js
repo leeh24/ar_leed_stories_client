@@ -12,8 +12,8 @@ export default function ElectricalDetails() {
     };
 
     const loaddata = () => {
-        alert("Great Shot!");
-        const apiData =  axios.get("http://127.0.0.1:5000/sensors", {headers})
+        alert("Load Data!");
+        const apiData =  axios.get(`http://localhost:5000/sensors`, {headers})
         .then (res => {
             console.log(res.data);
             setSensorData(res.data);
