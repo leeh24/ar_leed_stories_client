@@ -70,3 +70,20 @@
     height: 580px;
     object-fit: cover;
 }
+
+.data-section {
+    margin-left: 250px;
+    margin-right: 250px;
+    
+}
+
+.data-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.error-msg {
+    color: red;
+    text-align: center;
+}

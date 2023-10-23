@@ -5,32 +5,45 @@ import axios from 'axios';
 
 export default function ElectricalDetails() {
     const [sensorData, setSensorData] = useState([]);
+    const [error, setError] = useState(null);
 
-    const headers = {
-        'Access-Control-Allow-Origin': '*',
-        'Content-Type': 'application/json',
-    };
 
-    const loaddata = () => {
-        alert("Load Data!");
-        const apiData =  axios.get(`http://localhost:5000/sensors`, {headers})
+
+    function loadData() {
+        axios.get(`http://localhost:5000/sensors`)
         .then (res => {
             console.log(res.data);
             setSensorData(res.data);
+            setError(null);
+        })
+        .catch((err) => { 
+            console.log(err);
+            setError(err);
         });
     }
 
-          {/* call service endpoint to load data 
+          {/* call service endpoint to load data  
     useEffect(() => {
-        axios.get("http://127.0.0.1:5000/sensors", {headers})
-            .then (res => {
-                console.log(res.data);
-                setSensorData(res.data);
-            });
-    },[]);
-      }
+        axios.get(`http://localhost:5000/sensors`)
+        .then (res => {
+            console.log(res.data);
+            setSensorData(res.data);
+        })
+        .catch((err) => { 
+            console.log(err);
+            setError(err);
+        });
 
-  */}
+    },[]);*/}
+      
+    useEffect(() => {
+        loadData();
+    }, []);
+
+ 
+    const callLoadData = () => {
+        loadData();
+    }
 
     return (
         <>
@@ -41,8 +54,36 @@ export default function ElectricalDetails() {
             </div>
 
             <div>
-                <button onClick={loaddata}>Load Data</button>
+                <button onClick={callLoadData}>Reload Data</button>
             </div>
+
+            <br />
+            {
+                error != null &&
+                    <div className="error-msg">Error loading data: {error.message}</div>
+            }
+
+            {
+                sensorData.map(sensor => (
+                    <div className="data-section">
+                        {console.log(sensor)}
+                        <div className="data-title">
+                            <div>Sensor Name: {sensor.name}</div>
+                            <div>Sensor Description: {sensor.description}</div>
+                            <div>Room: {sensor.room}</div>
+                        </div>
+                        <ul>
+                        {
+                            sensor.data.map(sData => ( 
+                                <li>{sData.datetime} : {sData.value}{sData.units}</li>
+                            ))
+                        }
+                        </ul>
+                    </div>
+                ))
+                
+            }
+           
         </>
     );
 }
