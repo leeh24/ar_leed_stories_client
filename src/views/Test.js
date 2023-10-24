@@ -3,7 +3,7 @@ import Header from "../components/Header";
 import axios from 'axios';
 
 
-export default function ElectricalDetails() {
+export default function Test() {
     const [sensorData, setSensorData] = useState([]);
     const [error, setError] = useState(null);
 
@@ -21,6 +21,20 @@ export default function ElectricalDetails() {
             setError(err);
         });
     }
+
+          {/* call service endpoint to load data  
+    useEffect(() => {
+        axios.get(`http://localhost:5000/sensors`)
+        .then (res => {
+            console.log(res.data);
+            setSensorData(res.data);
+        })
+        .catch((err) => { 
+            console.log(err);
+            setError(err);
+        });
+
+    },[]);*/}
       
     useEffect(() => {
         loadData();
@@ -36,7 +50,7 @@ export default function ElectricalDetails() {
             <Header />
 
             <div>
-                <h1>Electrical Details</h1>
+                <h1>Test Page</h1>
             </div>
 
             <div>
