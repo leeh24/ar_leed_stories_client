@@ -15,12 +15,33 @@ export default function Header() {
                 </div>
                 <div className="menu-container">
                     <div className="menu-bar">
-                        <div className="menu-item">
-                            <Link to="/leed-stories">LEED Stories</Link>
-                        </div>
-                        <div className="menu-item">
-                            <Link to="/electric-details">Electrical Details</Link>
-                        </div>
+                        <a href="/leed-stories">
+                            <button class="navButton Camera">Use Camera</button>
+                        </a>
+
+                        <a href="/leed-stories">
+                            <button class="navButton">LEED Stories</button>
+                        </a>
+
+                        <a href="/electric-details">
+                            <button class="navButton">Electricity</button>
+                        </a>
+
+                        <a href="/electric-details">
+                            <button class="navButton">Humidity/Temp</button>
+                        </a>
+
+                        <a href="/electric-details">
+                            <button class="navButton">Water</button>
+                        </a>
+
+                        <a href="/electric-details">
+                            <button class="navButton">Air Quality</button>
+                        </a>
+
+                        <a href="/electric-details">
+                            <button class="navButton">Solar</button>
+                        </a>
                     </div>
                 </div>
             </div>
