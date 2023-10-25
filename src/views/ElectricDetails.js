@@ -36,7 +36,7 @@ export default function ElectricalDetails() {
             <Header />
 
             <div>
-                <h1>Electrical Details</h1>
+                <h1>Electrical Usage</h1>
             </div>
 
             <div>

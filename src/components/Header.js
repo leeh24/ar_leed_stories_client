@@ -27,19 +27,19 @@ export default function Header() {
                             <button class="navButton">Electricity</button>
                         </a>
 
-                        <a href="/electric-details">
-                            <button class="navButton">Humidity/Temp</button>
+                        <a href="/humidityTemp-details">
+                            <button class="navButton">Humidity/Temperature</button>
                         </a>
 
-                        <a href="/electric-details">
+                        <a href="/water-details">
                             <button class="navButton">Water</button>
                         </a>
 
-                        <a href="/electric-details">
+                        <a href="/air-details">
                             <button class="navButton">Air Quality</button>
                         </a>
 
-                        <a href="/electric-details">
+                        <a href="/solar-details">
                             <button class="navButton">Solar</button>
                         </a>
                     </div>
