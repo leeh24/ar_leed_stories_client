@@ -1,3 +1,4 @@
+/* If there's formatting errors in the future, check up on z-indexes */
 * {
     margin: 0;
     padding: 0;
@@ -8,6 +9,10 @@
 
 div {
     display: block;
+}
+
+.bodyTop {
+    background-color: rgba(255,255,255,0);
 }
 
 .App {
@@ -27,19 +32,21 @@ div {
 }
 
 .App-header {
-    border-bottom-width: 5px;
-    border-color: #e5e7eb;
-    border-bottom: solid;
-    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: #dcc6ffe5;
+    border-bottom: 5px solid #e5e7eb;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     font-size: calc(10px + 2vmin);
-    margin-top: 0px;
-    margin-bottom: 12px;
-    position: relative;
-}
+    margin: 0;
+    z-index:100
+  }
 
 .App-link {
     color: #61dafb;
@@ -254,6 +261,7 @@ div {
     display: block;
 }
 
+<<<<<<< HEAD
 .solarInfo {
     margin-left: 5px;
 }
@@ -266,3 +274,54 @@ div {
     background: url('./images/IMG_4148.jpg') cover;
     background-color: rgba(255, 255, 255, 0.5);
 }
+=======
+
+  .scroll-test {
+    position: relative;
+    top: 100vh;
+    height: 50vh;
+    overflow-y: scroll;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    flex-direction: column;
+  }
+
+  .frontLogo {
+    position: absolute;
+    top: 20vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    filter: none;
+    z-index:1
+  }
+
+  .bottom-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  .containerTitle {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+  }
+
+  .containerText {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 1.2rem;
+    font-family: 'Indie Flower', cursive, sans-serif;
+  }
+>>>>>>> 85b206139beea94400ed99c1480e076513cd9a0a
