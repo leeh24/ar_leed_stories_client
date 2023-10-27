@@ -11,6 +11,10 @@
     "chart.js": "^4.4.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.9.1",
+<<<<<<< HEAD
+=======
+    "react-chartjs-2": "^5.2.0",
+>>>>>>> d7a04528646197261df8dc1e92d1a47ef76454ed
     "react-circular-progressbar": "^2.1.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.17.0",
