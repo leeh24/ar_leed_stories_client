@@ -1,4 +1,4 @@
-import React, {useEffect,useState} from "react";
+import React from "react";
 import Header from "../components/Header";
 import lightBackground from "../images/lightBackground.jpg"
 
@@ -18,7 +18,7 @@ export default function ElectricalDetails() {
                         70 Kilowatts
                     </div>
                
-                <br></br>
+               
                 <div className="electricInfo">
                         Information on how the building uses the electricity, and its systems.
                 </div>
