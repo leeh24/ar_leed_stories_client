@@ -317,3 +317,35 @@ div {
     font-size: 1.2rem;
     font-family: 'Indie Flower', cursive, sans-serif;
 }
+/* TemperatureHumidity.css */
+.temperature-humidity-container {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+    margin: 0 auto;
+}
+
+.temperature-humidity-container h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+.temperature-humidity-container p {
+    font-size: 18px;
+    color: #555;
+    margin: 10px 0;
+}
+
+.temperature {
+    background-color: #ff6347;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.humidity {
+    background-color: #87ceeb;
+    border-radius: 5px;
+    padding: 10px;
+}
