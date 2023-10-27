@@ -253,3 +253,16 @@ div {
     margin: auto;
     display: block;
 }
+
+.solarInfo {
+    margin-left: 5px;
+}
+
+.solarData {
+    margin-left: 5px;
+}
+
+.solarBgImage {
+    background: url('./images/IMG_4148.jpg') cover;
+    background-color: rgba(255, 255, 255, 0.5);
+}
