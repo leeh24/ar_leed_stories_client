@@ -1,10 +1,13 @@
 import React from "react";
 import { useNavigate, Link } from "react-router-dom";
 import logo from "../images/up_shiley_marcos_logo.jpg";
+import menuButton from "../images/toggleMenu.png";
+import { NavLink } from 'react-router-dom';
+import { useState } from 'react';
 
 export default function Header() {
     const navigate = useNavigate();
-
+    const [isSidebarOpen, setSidebarOpen] = useState(false);
     return (
         <>
             <div className="App-header">
@@ -13,37 +16,56 @@ export default function Header() {
                         <img src={logo}></img>
                     </Link> 
                 </div>
+                {/* Desktop Menu */}
                 <div className="menu-container">
                     <div className="menu-bar">
-                        <a href="/leed-stories">
-                            <button class="navButton Camera">Use Camera</button>
-                        </a>
-
-                        <a href="/leed-stories">
-                            <button class="navButton">LEED Stories</button>
-                        </a>
-
-                        <a href="/electric-details">
-                            <button class="navButton">Electricity</button>
-                        </a>
-
-                        <a href="/humidityTemp-details">
-                            <button class="navButton">Humidity/Temperature</button>
-                        </a>
-
-                        <a href="/water-details">
-                            <button class="navButton">Water</button>
-                        </a>
-
-                        <a href="/air-details">
-                            <button class="navButton">Air Quality</button>
-                        </a>
-
-                        <a href="/solar-details">
-                            <button class="navButton">Solar</button>
-                        </a>
+                        <NavLink to="/leed-stories" activeClassName="activeLink" className="navButton">
+                            LEED Stories
+                        </NavLink>
+                        <NavLink to="/electric-details" activeClassName="activeLink" className="navButton">
+                            Electricity
+                        </NavLink>
+                        <NavLink to="/humidityTemp-details" activeClassName="activeLink" className="navButton">
+                            Humidity/Temperature
+                        </NavLink>
+                        <NavLink to="/water-details" activeClassName="activeLink" className="navButton">
+                            Water
+                        </NavLink>
+                        <NavLink to="/air-details" activeClassName="activeLink" className="navButton">
+                            Air Quality
+                        </NavLink>
+                        <NavLink to="/solar-details" activeClassName="activeLink" className="navButton">
+                            Solar
+                        </NavLink>
                     </div>
                 </div>
+            </div>
+
+                    {/* Mobile Menu */}
+                    <button className="sidebarButton" onClick={() => setSidebarOpen(!isSidebarOpen)}>
+                        <img className="menuButtonImage" src={menuButton}></img>
+                    </button>
+                    <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
+                        <NavLink to="/leed-stories" activeClassName="activeLink" className="navButton">
+                            LEED Stories
+                        </NavLink>
+                        <NavLink to="/electric-details" activeClassName="activeLink" className="navButton">
+                            Electricity
+                        </NavLink>
+                        <NavLink to="/humidityTemp-details" activeClassName="activeLink" className="navButton">
+                            Humidity/Temperature
+                        </NavLink>
+                        <NavLink to="/water-details" activeClassName="activeLink" className="navButton">
+                            Water
+                        </NavLink>
+                        <NavLink to="/air-details" activeClassName="activeLink" className="navButton">
+                            Air Quality
+                        </NavLink>
+                        <NavLink to="/solar-details" activeClassName="activeLink" className="navButton">
+                            Solar
+                        </NavLink>
+                        
+
             </div>
         </>
     );
