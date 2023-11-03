@@ -151,15 +151,22 @@ App-link {
 
 .homeVideo {
     object-fit: cover;
-    width: 100vw;
-    height: 100vh;
+    width: auto;
+    height: auto;
     position: fixed;
-    top: -10px;
+    top: -50px;
     left: 0;
     display: block;
     z-index: -1;
     opacity: 0.9;
 }
+
+.homeVideoContainer {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+  }
 
 .navButton {
     background-color: transparent;
@@ -344,7 +351,6 @@ App-link {
     margin-top: 1rem;
     text-align: center;
     font-size: 1.2rem;
-    font-family: 'Indie Flower', cursive, sans-serif;
 }
 /* TemperatureHumidity.css */
 .temperature-humidity-container {
@@ -515,4 +521,24 @@ header nav .button:hover{
     }
 
 
+    @media (max-width: 1300px) {
+        .homeVideo {
+            position: relative;
+            right: 0;
+            bottom: 0;
+            width: 100%; 
+            height: 100vh; 
+            object-fit: cover; 
+            z-index: -100;
+            opacity: 0.9;
+        }
+        
+        .homeVideoContainer {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+          }
+
+    }
   }

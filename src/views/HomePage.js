@@ -12,13 +12,15 @@ export default function HomePage() {
                 <div class="home">
                     <div class="frontLogo">
                         <img class="frontLogo" src={logo}></img>
-                </div>
+                    </div>
+                <div class="homeVideoContainer">
                     <video class="homeVideo" loop autoPlay muted>
                         <source src = {buildingVid} type="video/mp4"/>
                     </video>
                 </div>
+                </div>
                 <div class="pageBlock"></div>
-                </body>
+            </body>
                 <div class="scroll-test">
                     <div class="bottom-container">
                         <div class="containerTitle>">
