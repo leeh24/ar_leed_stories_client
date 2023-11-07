@@ -151,8 +151,8 @@ App-link {
 
 .homeVideo {
     object-fit: cover;
-    width: 100vw;
-    height: 100vh;
+    width: auto;
+    height: auto;
     position: fixed;
     top: -50px;
     left: 0;
@@ -307,7 +307,6 @@ App-link {
 
 .scroll-test {
     position: relative;
-    width: 100vw;
     top: 100vh;
     height: 50vh;
     overflow-y: scroll;
@@ -338,7 +337,6 @@ App-link {
     justify-content: center;
     align-items: center;
     height: 100%;
-    width: 100vw;
 }
 
 .containerTitle {
@@ -530,7 +528,7 @@ header nav .button:hover{
             bottom: 0;
             width: 100%; 
             height: 100vh; 
-            object-fit: fill; 
+            object-fit: cover; 
             z-index: -100;
             opacity: 0.9;
         }
