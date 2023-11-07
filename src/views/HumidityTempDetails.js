@@ -107,6 +107,17 @@ export default function HumidityTempDetails() {
             <div>
             <TemperatureHumidityDisplay />
             </div>
+             <div className="floorButtonContainer">
+                    <button className="floorButton">Room 1</button>
+                    <br></br>
+                    <button className="floorButton">Room 2</button>
+                    <br></br>
+                    <button className="floorButton">Room 3</button>
+                </div>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
         </>
     );
 }
