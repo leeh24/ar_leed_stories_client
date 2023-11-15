@@ -553,13 +553,17 @@ header nav .button:hover{
   
   
   #card {
+    height: auto;
+    flex-wrap: wrap;
     margin: 3em auto;
     display: flex;
     flex-direction: column;
-    max-width: 300px;
+    max-width: 600px;
     border-radius: 6px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
     overflow: hidden;
+    transition: height 0.3s ease-in-out; /* Add this line */
+    
   }
   
   /* Create three equal columns that floats next to each other */
@@ -621,3 +625,92 @@ header nav .button:hover{
     font-style: italic;
     line-height: 1.5em;
   }
+
+  .hotspot{
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: blue;
+    box-sizing: border-box;
+    pointer-events: none;
+  }
+
+  .hotspot[slot="hotspot-hand"]{
+    --min-hotspot-opacity: 0;
+    background-color: red;
+  }
+
+  .hotspot[slot="hotspot-foot"]:not([data-visible]) {
+    background-color: transparent;
+    border: 3px solid blue;
+  }
+
+  .annotation{
+    background-color: #b10aff98;
+    width: auto;
+    position: absolute;
+    transform: translate(10px, 10px);
+    border-radius: 10px;
+    padding: 10px;
+  }
+  .annotation-onModel{
+    background-color: #888888;
+    width: auto;
+    position: absolute;
+    transform: translate(10px, 10px);
+    border-radius: 10px;
+    padding: 10px;
+  }
+  /* This keeps child nodes hidden while the element loads */
+  :not(:defined) > * {
+    display: none;
+  }
+
+  .collapsible {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+  background-color: #ccc;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+    transform: scaleY(0);
+    transform-origin: top;
+    opacity: 0;
+    
+    flex: 0 0 auto;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+.content.open {
+    transform: scaleY(1);
+    opacity: 1;
+}
+
+.collapsible:after {
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: white;
+    float: right;
+    margin-left: 5px;
+  }
+  
+    .collapsible:active:after {
+        content: "\2796"; /* Unicode character for "minus" sign (-) */
+      }
+
+      li[data-list="ordered"] {
+        margin-bottom: 10px;
+    }
