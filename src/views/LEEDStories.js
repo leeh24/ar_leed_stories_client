@@ -4,9 +4,9 @@ import "@google/model-viewer/dist/model-viewer";
 
 export default function LEEDStories() {
     const [isOpen, setIsOpen] = useState([false, false, false]);
-const [isVisible, setIsVisible] = useState([false, false, false]);
-const contentRefs = useRef([]);
-const buttonRefs = useRef([]);
+    const [isVisible, setIsVisible] = useState([false, false, false]);
+    const contentRefs = useRef([]);
+    const buttonRefs = useRef([]);
 
 const toggleOpen = (index) => {
     if (isOpen[index]) {
@@ -68,7 +68,7 @@ useEffect(() => {
                 <section class="attribution">
                     <span>
                         <h1>Solar Panels</h1>
-                        <button ref={(el) => buttonRefs.current[1] = el} type="button" className="collapsible" onClick={() => toggleOpen(1)}>Expand for More Info</button>
+                        <button ref={(el) => buttonRefs.current[1] = el} type="button" className="collapsible" onClick={() => toggleOpen(1)}>{isOpen[1] ? 'Collapse Text' : 'Expand for more info'}</button>
                         <div ref={(el) => contentRefs.current[1] = el} className={`content ${isOpen[1] ? 'open' : ''}`}>
                         <p><strong>Reduction in Energy Use and Carbon Emission</strong>s - 80% less energy demand and 509 tons fewer CO2 operational emissions each year than an average similar building in the US.</p>
                         <ol>
@@ -95,8 +95,7 @@ useEffect(() => {
                 <section class="attribution">
                     <span>
                         <h1>Carbon Emission</h1>
-                        <button ref={(el) => buttonRefs.current[2] = el} type="button" className="collapsible" onClick={() => toggleOpen(2)}>Expand for More Info</button>
-                        <div ref={(el) => contentRefs.current[2] = el} className={`content ${isOpen[2] ? 'open' : ''}`}>
+                        <button ref={(el) => buttonRefs.current[2] = el} type="button" className="collapsible" onClick={() => toggleOpen(2)}>{isOpen[2] ? 'Collapse Text' : 'Expand for more info'}</button>                        <div ref={(el) => contentRefs.current[2] = el} className={`content ${isOpen[2] ? 'open' : ''}`}>
                         <p><strong> Reduction in Embodied Carbon* (*</strong>the greenhouse gas emissions generated from the manufacturing, transportation, installation, maintenance, and disposal of building materials).</p>
                         <ol>
                         <li data-list="ordered">1.Through the strategic reuse of the concrete foundation, retaining walls and concrete structural elements of the existing building, University of Portland achieved a 42% reduction in embodied carbon emissions compared to if the Innovation Center had been completely New Construction. The amount of materials being used for construction was reduced tremendously. The cement in concrete is responsible for 8% of planet-warming CO2 emissions globally.</li>
