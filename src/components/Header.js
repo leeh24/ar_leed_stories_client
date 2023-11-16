@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 export default function Header() {
     const navigate = useNavigate();
-    const [isSidebarOpen, setSidebarOpen] = useState(false);
+    const [isSidebarOpen, setSidebarOpen] = useState(true);
     return (
     <>
         <header>
@@ -60,6 +60,9 @@ export default function Header() {
                         <img className="menuButtonImage" src={menuButton}></img>
                     </button>
                     <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
+                        <NavLink to="/" activeClassName="activeLink" className="navButton">
+                            Home
+                        </NavLink>
                         <NavLink to="/leed-stories" activeClassName="activeLink" className="navButton">
                             LEED Stories
                         </NavLink>

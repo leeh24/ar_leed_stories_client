@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../components/Header";
 import buildingVid from "../images/UP Footage.mp4";
 import logo from "../images/up_shiley_marcos_logo_trans.png";
+import buildingPhoto from "../images/UPImage.png";
 
 export default function HomePage() {
     return (
@@ -14,12 +15,12 @@ export default function HomePage() {
                         <img class="frontLogo" src={logo}></img>
                     </div>
                 <div class="homeVideoContainer">
-                    <video class="homeVideo" loop autoPlay muted>
-                        <source src = {buildingVid} type="video/mp4"/>
+                    <video class="homeVideo" loop autoPlay muted playsInline>
+                        <source class="vid" src = {buildingVid} type="video/mp4"/>
                     </video>
                 </div>
+                    <img class = "homePhoto" src = {buildingPhoto}></img>
                 </div>
-                <div class="pageBlock"></div>
             </body>
                 <div class="scroll-test">
                     <div class="bottom-container">
