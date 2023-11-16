@@ -189,6 +189,7 @@ App-link {
 .navButton:hover {
     background: linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
     background-color: #408c99;
+    
 }
 
 .navButton:active {
@@ -198,6 +199,7 @@ App-link {
 
 .activeLink {
     text-decoration: none;
+    
   }
 
 .floorButton {
@@ -494,7 +496,8 @@ header nav .button:hover{
         height: 100%;
         transform: translateX(-100%);
         transition: transform 0.3s ease-out;
-        background-color: #b18dec;
+        background: rgb(196,0,255);
+        background: linear-gradient(225deg, rgba(196,0,255,0.95) 0%, rgba(154,0,255,0.95) 35%, rgba(141,0,255,0.95) 100%);
         z-index: 2;
       }
       
