@@ -59,7 +59,6 @@ useEffect(() => {
                   ios-src="./model/Solar_panel.usdz"
                   poster="./model/Solar_Panel.png"
                   shadow-intensity="1"
-                  ar-scale="fixed"
                   camera-controls
                   auto-rotate ar>
                 <div className="annotation">Fun Fact: These are the first solar panels built on campus!</div>
@@ -87,7 +86,6 @@ useEffect(() => {
                   ios-src="./model/Coal_deposit.usdz"
                   poster="./model/Coal_deposit.png"
                   shadow-intensity="1"
-                  ar-scale="fixed"
                   camera-controls
                   auto-rotate ar>
                 <div class="annotation">Fun Fact: UP achieved a 42% reduction in carbon emissions</div>
