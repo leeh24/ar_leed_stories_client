@@ -1,13 +1,12 @@
 import React from "react";
 import Header from "../components/Header";
-import lightBackground from "../images/lightBackground.jpg"
 
 export default function ElectricalDetails() {
 
     return (
         <>
             <Header />
-            <body style={{ backgroundImage:`url(${lightBackground})`, backgroundRepeat:"no-repeat",backgroundSize:"cover", height:"700px",}}>
+            <body>
                 <div >
                     <h1 style={{textAlign:"center"}}>Electrical Usage</h1>
                 </div>

@@ -1,4 +1,5 @@
 /* If there's formatting errors in the future, check up on z-indexes */
+
 * {
     margin: 0;
     padding: 0;
@@ -27,7 +28,7 @@ div {
 }
 
 .logo_container a img {
-    margin-right:20px;
+    margin-right: 20px;
     width: 100%;
     height: 70px;
     object-fit: cover;
@@ -40,7 +41,7 @@ App-header {
     width: 100vw;
     height: 70px;
     background-color: transparent;
-    border-bottom: 1px rgba(16,16,16,0.1);
+    border-bottom: 1px rgba(16, 16, 16, 0.1);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -52,16 +53,15 @@ App-header {
     padding-left: 20px;
 }
 
-App-header .inner{
+App-header .inner {
     width: 1300px;
     height: 100%;
     display: block;
     margin: 0 auto;
-
 }
 
 App-header .logo div {
-    height:100%;
+    height: 100%;
     display: table-cell;
     vertical-align: middle;
 }
@@ -166,7 +166,7 @@ App-link {
     height: 100vh;
     overflow: hidden;
     position: relative;
-  }
+}
 
 .navButton {
     background-color: transparent;
@@ -181,7 +181,7 @@ App-link {
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 15px;
-    border:none;
+    border: none;
     flex-grow: 1;
     text-align: center;
 }
@@ -189,7 +189,6 @@ App-link {
 .navButton:hover {
     background: linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
     background-color: #408c99;
-    
 }
 
 .navButton:active {
@@ -199,8 +198,7 @@ App-link {
 
 .activeLink {
     text-decoration: none;
-    
-  }
+}
 
 .floorButton {
     background-color: black;
@@ -280,6 +278,9 @@ App-link {
     position: relative;
 }
 
+
+/* electricPage.css*/
+
 .electricInfo {
     float: right;
     width: 200px;
@@ -298,6 +299,41 @@ App-link {
     margin: auto;
     display: block;
 }
+
+.floorButton {
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    padding: 10px 60px;
+    border-radius: 5px;
+    margin: 10px 0px;
+    cursor: pointer;
+}
+
+.floorButtonContainer {
+    margin-left: 100px;
+}
+
+
+/* waterDetails.css */
+
+.waterInfo {
+    margin-left: 5px;
+}
+
+.waterData {
+    margin-left: 5px;
+}
+
+
+/* airDetails.css */
+
+.airInfo {
+    margin-left: 5px;
+}
+
+
+/* solarPage.css */
 
 .solarInfo {
     margin-left: 5px;
@@ -356,7 +392,10 @@ App-link {
     text-align: center;
     font-size: 1.2rem;
 }
+
+
 /* TemperatureHumidity.css */
+
 .temperature-humidity-container {
     background-color: #f0f0f0;
     border-radius: 10px;
@@ -389,51 +428,52 @@ App-link {
     padding: 10px;
 }
 
-
-header{
+header {
     width: 100vw;
     height: 100px;
     border-bottom: solid 1px rgba(16, 16, 16, 0.1);
     font-family: 'Poppins';
 }
 
-header .inner{
-    width: 1300px; /* This is the inner width of the content inside of your header (80%, etc) */
+header .inner {
+    width: 1300px;
+    /* This is the inner width of the content inside of your header (80%, etc) */
     height: 100%;
     display: block;
     margin: 0 auto;
 }
 
-header .logo{
+header .logo {
     display: table;
     height: 100%;
     float: left;
 }
 
-header .logo div{
+header .logo div {
     height: 100%;
     display: table-cell;
     vertical-align: middle;
 }
 
-header .logo img{
+header .logo img {
     height: 50px;
-    margin-top: 5px; /* Optical alignment of the logo */
+    margin-top: 5px;
+    /* Optical alignment of the logo */
 }
 
-header nav{
+header nav {
     float: right;
     height: 100%;
 }
 
-header nav li{
+header nav li {
     display: table;
     height: 100%;
     float: left;
     margin-right: 30px;
 }
 
-header nav li:last-of-type{
+header nav li:last-of-type {
     margin-right: 0;
 }
 
@@ -442,18 +482,19 @@ header nav span {
     vertical-align: middle;
 }
 
-header nav a{
+header nav a {
     color: #101010;
 }
 
-header nav .button{
-    background-color: #1ab26b; /* This HEX is the color of the button */
+header nav .button {
+    background-color: #1ab26b;
+    /* This HEX is the color of the button */
     color: #FFF;
     padding: 10px 20px;
     border-radius: 4px;
 }
 
-header nav .button:hover{
+header nav .button:hover {
     filter: brightness(1.05);
 }
 
@@ -461,7 +502,7 @@ header nav .button:hover{
     display: none;
     flex-direction: column;
     /* Add more styles as needed */
-  }
+}
 
 .sidebarButton {
     display: none;
@@ -472,21 +513,20 @@ header nav .button:hover{
     position: relative;
     right: 0;
     bottom: 0;
-    width: 100%; 
-    height: 100vh; 
-    object-fit: fill; 
+    width: 100%;
+    height: 100vh;
+    object-fit: fill;
     z-index: -100;
     opacity: 0.9;
 }
 
 @media (max-width: 600px) {
     .App-header {
-      display: none;
+        display: none;
     }
     header {
         display: none;
-      }
-
+    }
     .sidebar {
         display: flex;
         position: fixed;
@@ -496,25 +536,25 @@ header nav .button:hover{
         height: 100%;
         transform: translateX(-100%);
         transition: transform 0.3s ease-out;
-        background: rgb(196,0,255);
-        background: linear-gradient(225deg, rgba(196,0,255,0.95) 0%, rgba(154,0,255,0.95) 35%, rgba(141,0,255,0.95) 100%);
+        background: rgb(196, 0, 255);
+        background: linear-gradient(225deg, rgba(196, 0, 255, 0.95) 0%, rgba(154, 0, 255, 0.95) 35%, rgba(141, 0, 255, 0.95) 100%);
         z-index: 2;
-      }
-      
-      .sidebar.open {
+    }
+    .sidebar.open {
         transform: translateX(0);
-      }
-
-      .sidebarButton {
+    }
+    .sidebarButton {
         display: flex;
         z-index: 100;
-        position: fixed; /* Add this line */
+        position: fixed;
+        /* Add this line */
         top: 0;
-        right: 0; /* Change from left to right */
+        right: 0;
+        /* Change from left to right */
         background-color: transparent;
-        border: 2px solid black; /* Add this line */
+        border: 2px solid black;
+        /* Add this line */
     }
-
     .frontLogo {
         position: flex;
         top: 20vh;
@@ -528,10 +568,11 @@ header nav .button:hover{
         filter: none;
         z-index: 1;
     }
-
     .menuButtonImage {
-        width: 50px; /* Adjust as needed */
-        height: 50px; /* Adjust as needed */
+        width: 50px;
+        /* Adjust as needed */
+        height: 50px;
+        /* Adjust as needed */
         background: none;
         background-color: rgba(255, 255, 255, 0);
         opacity: 1;
@@ -542,21 +583,21 @@ header nav .button:hover{
         position: relative;
         right: 0;
         bottom: 0;
-        width: 100%; 
-        height: 100vh; 
-        object-fit: fill; 
+        width: 100%;
+        height: 100vh;
+        object-fit: fill;
         z-index: -100;
         opacity: 0.9;
     }
-    .homeVideoContainer{
+    .homeVideoContainer {
         visibility: hidden;
         display: hidden;
         position: relative;
         right: 0;
         bottom: 0;
-        width: 100%; 
-        height: 100vh; 
-        object-fit: fill; 
+        width: 100%;
+        height: 100vh;
+        object-fit: fill;
         z-index: -100;
         opacity: 0.9;
     }
@@ -565,9 +606,9 @@ header nav .button:hover{
         position: relative;
         right: 0;
         bottom: 0;
-        width: 100%; 
-        height: 100vh; 
-        object-fit: cover; 
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
         z-index: -100;
         opacity: 0.9;
     }
@@ -577,42 +618,38 @@ header nav .button:hover{
     .video {
         display: none;
     }
-
-
     @media (max-width: 1300px) {
         .homeVideo {
             display: hidden;
             position: relative;
             right: 0;
             bottom: 0;
-            width: 100%; 
-            height: 100vh; 
-            object-fit: fill; 
+            width: 100%;
+            height: 100vh;
+            object-fit: fill;
             z-index: -100;
             opacity: 0.9;
         }
-        
         .homeVideoContainer {
             display: hidden;
             width: 100vw;
             height: 100vh;
             overflow: hidden;
             position: relative;
-          }
-
+        }
     }
     .containerTitle {
         font-size: 1rem;
-        font-weight: bold; 
+        font-weight: bold;
         text-align: center;
         justify-content: center;
         margin-bottom: 0.5rem;
         font-family: 'Comic Sans MS', cursive, sans-serif;
         margin-left: auto;
         margin-right: auto;
-        width: 50%; /* or any other value */
+        width: 50%;
+        /* or any other value */
     }
-    
     .containerText {
         margin-top: 1rem;
         text-align: center;
@@ -626,16 +663,16 @@ header nav .button:hover{
         height: 100%;
         width: 100vw;
     }
-  }
-  body {
+}
+
+body {
     margin: 1em;
     padding: 0;
     font-family: Google Sans, Noto, Roboto, Helvetica Neue, sans-serif;
     color: #244376;
-  }
-  
-  
-  #card {
+}
+
+#card {
     height: auto;
     flex-wrap: wrap;
     margin: 3em auto;
@@ -645,61 +682,67 @@ header nav .button:hover{
     border-radius: 6px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
     overflow: hidden;
-    transition: height 0.3s ease-in-out; /* Add this line */
-    
-  }
-  
-  /* Create three equal columns that floats next to each other */
-  .column {
+    transition: height 0.3s ease-in-out;
+    /* Add this line */
+}
+
+
+/* Create three equal columns that floats next to each other */
+
+.column {
     float: left;
     width: 30%;
     padding: 20px;
-     /* Should be removed. Only for demonstration */
-  }
-  
-  /* Clear floats after the columns */
-  .row:after {
+    /* Should be removed. Only for demonstration */
+}
+
+
+/* Clear floats after the columns */
+
+.row:after {
     content: "";
     display: table;
     clear: both;
-  }
-  
-  /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-  @media screen and (max-width: 600px) {
+}
+
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+
+@media screen and (max-width: 600px) {
     .column {
-      width: 100%;
+        width: 100%;
     }
-  }
-  
-  model-viewer {
+}
+
+model-viewer {
     width: 100%;
     height: 400px;
     background-color: #70BCD1;
     --poster-color: #ffffff00;
-  }
-  
-  .attribution {
+}
+
+.attribution {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin: 1em;
-  }
-  
-  .attribution h1 {
+}
+
+.attribution h1 {
     margin: 0 0 0.25em;
-  }
-  
-  .attribution img {
+}
+
+.attribution img {
     opacity: 0.5;
     height: 2em;
-  }
-  
-  .attribution .cc {
+}
+
+.attribution .cc {
     flex-shrink: 0;
     text-decoration: none;
-  }
-  
-  footer {
+}
+
+footer {
     display: flex;
     flex-direction: column;
     max-width: 600px;
@@ -707,9 +750,9 @@ header nav .button:hover{
     text-align: center;
     font-style: italic;
     line-height: 1.5em;
-  }
+}
 
-  .hotspot{
+.hotspot {
     display: block;
     width: 20px;
     height: 20px;
@@ -718,82 +761,93 @@ header nav .button:hover{
     background-color: blue;
     box-sizing: border-box;
     pointer-events: none;
-  }
+}
 
-  .hotspot[slot="hotspot-hand"]{
+.hotspot[slot="hotspot-hand"] {
     --min-hotspot-opacity: 0;
     background-color: red;
-  }
+}
 
-  .hotspot[slot="hotspot-foot"]:not([data-visible]) {
+.hotspot[slot="hotspot-foot"]:not([data-visible]) {
     background-color: transparent;
     border: 3px solid blue;
-  }
+}
 
-  .annotation{
+.annotation {
     background-color: #b10aff98;
     width: auto;
     position: absolute;
     transform: translate(10px, 10px);
     border-radius: 10px;
     padding: 10px;
-  }
-  .annotation-onModel{
+}
+
+.annotation-onModel {
     background-color: #888888;
     width: auto;
     position: absolute;
     transform: translate(10px, 10px);
     border-radius: 10px;
     padding: 10px;
-  }
-  /* This keeps child nodes hidden while the element loads */
-  :not(:defined) > * {
-    display: none;
-  }
-
-  .collapsible {
-  background-color: #eee;
-  color: #444;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
 }
+
+
+/* This keeps child nodes hidden while the element loads */
+
+ :not(:defined)>* {
+    display: none;
+}
+
+.collapsible {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-.active, .collapsible:hover {
-  background-color: #ccc;
+
+.active,
+.collapsible:hover {
+    background-color: #ccc;
 }
 
+
 /* Style the collapsible content. Note: hidden by default */
+
 .content {
     transform: scaleY(0);
     transform-origin: top;
     opacity: 0;
-    
     flex: 0 0 auto;
     transition: transform 0.3s ease-out, opacity 0.3s ease-out;
 }
+
 .content.open {
     transform: scaleY(1);
     opacity: 1;
 }
 
 .collapsible:after {
-    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    content: '\02795';
+    /* Unicode character for "plus" sign (+) */
     font-size: 13px;
     color: white;
     float: right;
     margin-left: 5px;
-  }
-  
-    .collapsible:active:after {
-        content: "\2796"; /* Unicode character for "minus" sign (-) */
-      }
+}
 
-      li[data-list="ordered"] {
-        margin-bottom: 10px;
-    }
+.collapsible:active:after {
+    content: "\2796";
+    /* Unicode character for "minus" sign (-) */
+}
+
+li[data-list="ordered"] {
+    margin-bottom: 10px;
+}
