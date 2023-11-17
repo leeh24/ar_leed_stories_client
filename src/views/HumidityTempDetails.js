@@ -2,13 +2,30 @@ import React, {useEffect,useState} from "react";
 import Header from "../components/Header";
 
 
-
+import { Line } from 'react-chartjs-2';
 
 import { CircularProgressbar } from 'react-circular-progressbar';
 
 
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 ChartJS.register(ArcElement, Tooltip, Legend);
+
+
+  const temperatureData = {
+    labels: ['12:00 AM', '3:00 AM', '6:00 AM', '9:00 AM', '12:00 PM', '3:00 PM', '6:00 PM', '9:00 PM'],
+    datasets: [
+      {
+        label: 'Temperature',
+        data: [25, 24, 23, 26, 28, 27, 26, 24], // Sample temperature values
+        fill: false,
+        borderColor: 'rgb(75, 192, 192)',
+        tension: 0.1,
+      },
+    ],
+  }
+
+
+
 
 const TemperatureHumidityDisplay = () => {
   // Initialize state for temperature and humidity with dummy values
@@ -57,6 +74,10 @@ const TemperatureHumidityDisplay = () => {
     <h1>Temperature and Humidity</h1>
     <div className="temperature">
       <p>Temperature: {temperature} Degrees Celcius</p>
+      <h2>Temperature Graph</h2>
+      <Line data={temperatureData} />
+     
+
     </div>
     <div className="humidity">
       <p>Humidity: {humidity}%</p>
@@ -107,7 +128,8 @@ export default function HumidityTempDetails() {
             <div>
             <TemperatureHumidityDisplay />
             </div>
-             <div className="floorButtonContainer">
+           
+            <div className="floorButtonContainer">
                     <button className="floorButton">Room 1</button>
                     <br></br>
                     <button className="floorButton">Room 2</button>
@@ -118,6 +140,8 @@ export default function HumidityTempDetails() {
                 <br></br>
                 <br></br>
                 <br></br>
+
+
         </>
     );
 }
