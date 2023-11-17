@@ -4,19 +4,21 @@ import {
     BarElement,
     LineElement,
     PointElement,
+    ArcElement, 
     CategoryScale,
     LinearScale,
     Tooltip,
     Legend
 } from "chart.js";
-import { Bar, Line } from "react-chartjs-2";
+import { Bar, Line, Doughnut, Pie } from "react-chartjs-2";
 import Header from "../components/Header";
-import bgImage from "../images/bg.png";
+// import bgImage from "../images/bg.png";
 
 ChartJS.register(
     BarElement,
     LineElement,
     PointElement,
+    ArcElement,
     CategoryScale,
     LinearScale,
     Tooltip,
@@ -26,15 +28,13 @@ ChartJS.register(
 export default function SolarDetails() {
     const barData = {
         labels: ['Mon', 'Tue', 'Wed'],
-        datasets: [
-            {
-                labels: 'test',
-                data: [3, 6, 9],
-                backgroundColor: 'aqua',
-                borderColor: 'black',
-                borderWidth: 1,
-            }
-        ]
+        datasets: [{
+            label: 'test',
+            data: [3, 6, 9],
+            backgroundColor: 'aqua',
+            borderColor: 'black',
+            borderWidth: 1,
+        }]
     }
 
     const barOptions = {
@@ -42,26 +42,52 @@ export default function SolarDetails() {
     }
 
     const lineData = {
-        labels: ['Mon, Tue, Wed'],
-        datasets: [
-            {
-                label: 'test',
-                data: [3, 6, 9],
-                backgroundColor: 'aqua',
-                borderColor: 'black',
-                pointBorderColor: 'aqua'
-            }
-        ]
+        labels: ['Mon', 'Tue', 'Wed'],
+        datasets: [{
+            label: 'test',
+            data: [3, 6, 9],
+            backgroundColor: 'aqua',
+            borderColor: 'black',
+            pointBorderColor: 'aqua'
+        }]
     }
 
     const lineOptions = {
 
     }
 
+    const doughnutData = {
+        labels: ['Yes', 'No'],
+        datasets: [{
+            label: 'Poll',
+            data: [3, 6],
+            backgroundColor: ['black', 'red'],
+            borderColor: ['black', 'red'],
+        }]
+    }
+
+    const doughnutOptions = {
+
+    }
+
+    const pieData = {
+        labels: ['Yes', 'No'],
+        datasets: [{
+            label: 'Poll',
+            data: [3, 6],
+            backgroundColor: ['black', 'red'],
+            borderColor: ['black', 'red'],
+        }]
+    }
+
+    const pieOptions = {
+
+    }
+
     return (
         <>
             <Header />
-            <body style={{ backgroundImage: `url(${bgImage})`, backgroundRepeat: "no-repeat", backgroundSize: "cover", opacity:1}}>
+            <body /* style={{ backgroundImage: `url(${bgImage})`, backgroundRepeat: "no-repeat", backgroundSize: "cover", opacity:1}} */>
                 <h1 style={{ textAlign: "center", color: "#7752b4" }}>Solar Energy Usage</h1>
 
                 <br></br>
@@ -88,12 +114,14 @@ export default function SolarDetails() {
                         <option>Energy Generated</option>
                     </select>
 
+                    <select id="graphType">
+                        <option>Bar Graph</option>
+                        <option>Line Graph</option>
+                    </select>
+
                     <select id="chartType">
-                        <option>Bar</option>
-                        <option>Pie</option>
-                        <option>Doughnut</option>
-                        <option>Line</option>
-                        <option>All listed charts</option>
+                        <option>Doughnut Chart</option>
+                        <option>Pie Chart</option>
                     </select>
 
                     <Bar
@@ -105,6 +133,16 @@ export default function SolarDetails() {
                         data={lineData}
                         options={lineOptions}
                     ></Line>
+
+                    <Doughnut
+                        data={doughnutData}
+                        options={doughnutOptions}
+                    ></Doughnut>
+
+                    <Pie
+                        data={pieData}
+                        options={pieOptions}
+                    ></Pie>
                 </div>
 
             </body>
