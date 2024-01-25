@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate, Link } from "react-router-dom";
-import logo from "../images/up_shiley_marcos_logo.jpg";
+import logo from "../images/up_shiley_marcos_logo_trans.png";
 import menuButton from "../images/toggleMenu.png";
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
