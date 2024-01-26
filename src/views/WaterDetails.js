@@ -1,5 +1,7 @@
 import React, {useEffect,useState} from "react";
 import Header from "../components/Header";
+import axios from 'axios';
+
 import {
     Chart as ChartJS,
     BarElement,
@@ -23,12 +25,39 @@ ChartJS.register(
 )
 
 export default function WaterDetails() {
+
+    const [waterData, setWaterData] = useState([]);
+    const [error, setError] = useState(null);
+    
+    function loadData(useDummyData) {
+        if (useDummyData) {
+            const dummyData = [3, 6, 9, 2, 4, 8, 1];
+            setWaterData(dummyData);
+        } else {
+            axios.get(`http://localhost:8080/weeklywaterusage`)
+                .then (res => {
+                    console.log(res.data);
+                    setWaterData(res.data.waterUsage);
+                    setError(null);
+                })
+                .catch((err) => {
+                    console.log(err);
+                    setError(err);
+            });
+        }
+    }
+
+    useEffect(() => {
+        loadData(false);
+    }, []);
+
     const barData = {
         labels: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
         datasets: [
             {
-                labels: 'test',
-                data: [3, 6, 9, 2, 4, 8, 1],
+                label: 'test',
+                //data: [3, 6, 9, 2, 4, 8, 1],
+                data: waterData,
                 backgroundColor: 'blue',
                 borderColor: 'black',
                 borderWidth: 1,
@@ -37,7 +66,11 @@ export default function WaterDetails() {
     }
 
     const barOptions = {
-
+        plugins: {
+            legend: {
+                position: 'bottom'
+            }
+        }
     }
 
     const lineData = {
@@ -61,21 +94,23 @@ export default function WaterDetails() {
         <>
             <Header />
             <body>
-                <div>
-                    <h1 style={{textAlign:"center"}}>Water Usage</h1>
-                </div>
-                <br></br>
-                <br></br>
-
                 <div className="waterInfo">
-                    <h3>About the Shiley-Marcos Center Water Usage</h3>
-                    Insert information here.
+                    <h2 style = {{textAlign:"center"}}>Water Usage</h2>
+                    <div>
+                        Insert information here.
+                    </div>
                 </div>
 
-                <Bar
+                <br></br>
+                <br></br>
+                <div className ="waterData">
+                    <div className = "waterDataGraph">
+                    <Bar
                         data={barData}
                         options={barOptions}
                     ></Bar>
+                    </div>
+                </div>
 
             </body>
             
