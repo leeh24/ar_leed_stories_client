@@ -71,6 +71,17 @@ div {
     cursor: pointer;
     user-select: none;
 }
+.scroll-icon {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: #ffffff;
+    z-index: 10;
+    cursor: pointer;
+    user-select: none;
+}
 
 .logo_container a img {
     margin-right: 20px;
