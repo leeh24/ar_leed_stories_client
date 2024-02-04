@@ -16,9 +16,9 @@ export default function HomePage() {
                     <div class="frontLogo">
                         <img class="frontLogo" src={logo}></img>
                     </div>
-                <div class="homeVideoContainer">           
+                    <div class="homeVideoContainer">           
                     <ImageSlider slides = {SliderData}/>    
-                </div>
+                    </div>
                     <img class = "homePhoto" src = {buildingPhoto}></img>
                 </div>
             </body>

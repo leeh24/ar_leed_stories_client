@@ -15,6 +15,9 @@ div {
 
 .bodyTop {
     background-color: rgba(255, 255, 255, 0);
+    width: 100vw;
+    object-fit: cover;
+    
 }
 
 .App {
@@ -47,6 +50,26 @@ div {
 
 .fade-out {
     opacity: 0;
+}
+.right-arrow {
+    position:absolute;
+    top: 50%;
+    right: 32px;
+    font-size: 3rem;
+    color: #000;
+    z-index: 10;
+    cursor: pointer;
+    user-select: none;
+}
+.left-arrow {
+    position:absolute;
+    top: 50%;
+    left: 32px;
+    font-size: 3rem;
+    color: #000;
+    z-index: 10;
+    cursor: pointer;
+    user-select: none;
 }
 
 .logo_container a img {
@@ -162,9 +185,9 @@ App-link {
 
 .home {
     display: flex;
+    width: 100vw;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
     font-size: calc(10px + 2vmin);
     margin-top: 20px;
     margin-bottom: 12px;
@@ -651,26 +674,7 @@ header nav .button:hover {
     .video {
         display: none;
     }
-    @media (max-width: 1300px) {
-        .homeVideo {
-            display: hidden;
-            position: relative;
-            right: 0;
-            bottom: 0;
-            width: 100%;
-            height: 100vh;
-            object-fit: fill;
-            z-index: -100;
-            opacity: 0.9;
-        }
-        .homeVideoContainer {
-            display: hidden;
-            width: 100vw;
-            height: 100vh;
-            overflow: hidden;
-            position: relative;
-        }
-    }
+    
     .containerTitle {
         font-size: 1rem;
         font-weight: bold;
@@ -693,7 +697,7 @@ header nav .button:hover {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100%;
+        height: 100vh;
         width: 100vw;
     }
 }
@@ -703,6 +707,7 @@ body {
     padding: 0;
     font-family: Google Sans, Noto, Roboto, Helvetica Neue, sans-serif;
     color: #244376;
+    width: 100vw;
 }
 
 #card {
