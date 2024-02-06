@@ -5,7 +5,8 @@ import { CgScrollV } from "react-icons/cg";
 
 const ImageSlider = ({ slides }) => { 
     const [current, setCurrent] = useState(0);
-    const length = slides.length;
+    //const length = slides.length;
+    const length = 3;
 
     useEffect(() => {
         const timer = setInterval(() => {
