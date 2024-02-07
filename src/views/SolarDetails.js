@@ -1,4 +1,8 @@
 import React, { useEffect, useState } from "react";
+import axios from 'axios';
+import Header from "../components/Header";
+import bgImage from "../images/bg.png";
+import { Bar, Line, Doughnut, Pie } from "react-chartjs-2";
 import {
     Chart as ChartJS,
     BarElement,
@@ -10,9 +14,6 @@ import {
     Tooltip,
     Legend
 } from "chart.js";
-import { Bar, Line, Doughnut, Pie } from "react-chartjs-2";
-import Header from "../components/Header";
-import bgImage from "../images/bg.png";
 
 ChartJS.register(
     BarElement,
@@ -26,172 +27,55 @@ ChartJS.register(
 )
 
 export default function SolarDetails() {
-    /* const barData = {
-        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-        datasets: [{
-            label: 'test',
-            data: [3, 6, 9],
-            data: [
-                { id: 'Mon', value:
-                    {
-                        2022: { consumed: 100, generated: 200 },
-                        2023: { consumed: 290, generated: 350 }
-                    }
-                },
-                { id: 'Tue', value:
-                    {
-                        2022: { consumed: 160, generated: 170 },
-                        2023: { consumed: 340, generated: 350 }
-                    }
-                },
-                { id: 'Wed', value:
-                    {
-                        2022: { consumed: 320, generated: 500 },
-                        2023: { consumed: 230, generated: 350 }
-                    }
-                },
-                { id: 'Thu', value:
-                    {
-                        2022: { consumed: 190, generated: 275 },
-                        2023: { consumed: 500, generated: 500 }
-                    }
-                },
-                { id: 'Fri', value:
-                    {
-                        2022: { consumed: 400, generated: 485 },
-                        2023: { consumed: 290, generated: 400 }
-                    }
-                },
-                { id: 'Sat', value:
-                    {
-                        2022: { consumed: 395, generated: 525 },
-                        2023: { consumed: 230, generated: 310 }
-                    }
-                },
-                { id: 'Sun', value:
-                    {
-                        2022: { consumed: 460, generated: 540 },
-                        2023: { consumed: 600, generated: 700 }
-                    }
-                }
-            ],
-            backgroundColor: 'aqua',
-            borderColor: 'black',
-            borderWidth: 1,
-        }]
-    } 
+    const [solarData, setSolarData] = useState([]);
+    const [error, setError] = useState(null);
 
-    const barConfig = {
-        type: 'bar',
-        barData,
-        options: {
-            parsing: {
-                xAxisKey: 'id',
-                yAxisKey: 'value.2022.consumed'
-            },
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
+    function loadData(useDummyData) {
+        if (useDummyData) {
+            const dummyData = [3, 6, 9, 2, 4, 8, 1];
+            setSolarData(dummyData);
+        } else {
+            axios.get(`http://localhost:8080/weeklysolarusage`)
+                .then (res => {
+                    console.log(res.data);
+                    setSolarData(res.data.solarUsage);
+                    setError(null);
+                })
+                .catch((err) => {
+                    console.log(err);
+                    setError(err);
+            });
         }
-    } */
-
-    /* const lineData = {
-        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-        datasets: [{
-            label: 'test',
-            data: [3, 6, 9],
-            backgroundColor: 'aqua',
-            borderColor: 'black',
-            pointBorderColor: 'aqua'
-        }]
     }
 
-    const lineOptions = {
-
-    }
-
-    const doughnutData = {
-        labels: ['Yes', 'No'],
-        datasets: [{
-            label: 'Poll',
-            data: [3, 6],
-            backgroundColor: ['black', 'red'],
-            borderColor: ['black', 'red'],
-        }]
-    }
-
-    const doughnutOptions = {
-
-    }
-
-    const pieData = {
-        labels: ['Yes', 'No'],
-        datasets: [{
-            label: 'Poll',
-            data: [3, 6],
-            backgroundColor: ['black', 'red'],
-            borderColor: ['black', 'red'],
-        }]
-    }
-
-    const pieOptions = {
-
-    } */
+    useEffect(() => {
+        loadData(false);
+    }, []);
 
     const chartData = {
         labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
         datasets: [
             {
                 label: 'Sample Data',
-                data: [65, 59, 80, 81, 56, 55, 40],
-                /*data: [
-                    { id: 'Mon', value:
-                        {
-                            2022: { consumed: 100, generated: 200 },
-                            2023: { consumed: 290, generated: 350 }
-                        }
-                    },
-                    { id: 'Tue', value:
-                        {
-                            2022: { consumed: 160, generated: 170 },
-                            2023: { consumed: 340, generated: 350 }
-                        }
-                    },
-                    { id: 'Wed', value:
-                        {
-                            2022: { consumed: 320, generated: 500 },
-                            2023: { consumed: 230, generated: 350 }
-                        }
-                    },
-                    { id: 'Thu', value:
-                        {
-                            2022: { consumed: 190, generated: 275 },
-                            2023: { consumed: 500, generated: 500 }
-                        }
-                    },
-                    { id: 'Fri', value:
-                        {
-                            2022: { consumed: 400, generated: 485 },
-                            2023: { consumed: 290, generated: 400 }
-                        }
-                    },
-                    { id: 'Sat', value:
-                        {
-                            2022: { consumed: 395, generated: 525 },
-                            2023: { consumed: 230, generated: 310 }
-                        }
-                    },
-                    { id: 'Sun', value:
-                        {
-                            2022: { consumed: 460, generated: 540 },
-                            2023: { consumed: 600, generated: 700 }
-                        }
-                    }
-                ], */
-                backgroundColor: 'rgba(75,192,192,0.2)',
-                borderColor: 'rgba(75,192,192,1)',
+                data: solarData,
+                backgroundColor: [
+                    'rgba(255, 0, 0, 0.2)',
+                    'rgba(255, 127, 0, 0.2)', 
+                    'rgba(255, 255, 0, 0.2)', 
+                    'rgba(0, 255, 0, 0.2)', 
+                    'rgba(0, 0, 255, 0.2)', 
+                    'rgba(75, 0, 130, 0.2)', 
+                    'rgba(148, 0, 211, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 0, 0, 1)',
+                    'rgba(255, 127, 0, 1)', 
+                    'rgba(255, 255, 0, 1)', 
+                    'rgba(0, 255, 0, 1)', 
+                    'rgba(0, 0, 255, 1)', 
+                    'rgba(75, 0, 130, 1)', 
+                    'rgba(148, 0, 211, 1)'
+                ],
                 borderWidth: 1,
             },
         ],
@@ -226,7 +110,7 @@ export default function SolarDetails() {
     const renderChart = () => {
         switch (chartType) {
             case "doughnut":
-                return <Doughnut data={chartData} />;
+                return <Doughnut data={chartData} backgroundColor={'rgba(255, 0, 0, 0.2)'}/>;
             case "pie":
                 return <Pie data={chartData} />;
             default:
@@ -245,15 +129,30 @@ export default function SolarDetails() {
                 <br></br>
 
                 <div className="solarInfo">
-                    <h3>About the Shiley-Marcos Center Solar Farm</h3>
-                    Insert information here.
+                    <h3>About the Solar Farm at the Shiley-Marcos Center</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend leo a mollis dapibus. Suspendisse 
+                        quis urna vel velit scelerisque semper rhoncus ut odio. Maecenas fringilla elit eu dignissim consectetur. Donec 
+                        felis ex, consequat sed sagittis non, posuere sit amet nulla. Quisque in suscipit arcu, non fermentum massa. 
+                        Donec nec euismod lectus. Maecenas ut massa nulla. Integer auctor dictum metus non finibus. Fusce purus turpis, 
+                        placerat et tristique sed, mattis a ipsum. Ut vitae viverra nibh, ac tincidunt ante.
+                    </p>
+                    
+                    <p>
+                        Nullam suscipit hendrerit convallis. Praesent magna ex, euismod aliquam sapien et, faucibus porta risus. Praesent 
+                        tincidunt et lacus sed sagittis. Sed quis pulvinar dolor. Aenean commodo vel nisl in aliquam. Donec pellentesque, 
+                        dolor rhoncus viverra dapibus, urna tortor aliquam arcu, nec tempus augue metus consequat nunc. Sed eu ipsum a tellus 
+                        egestas pretium. Maecenas eu turpis eget nisi fermentum egestas quis nec tortor. Proin feugiat sodales lorem et scelerisque. 
+                        Suspendisse nibh augue, elementum eget justo sed, rutrum laoreet lectus. In hac habitasse platea dictumst.   
+                    </p>
+                    
                 </div>
 
                 <br></br>
 
-                <div className="solarData">
-                    <h3>Analyze solar energy data</h3>
+                <h3>Analyze solar energy data</h3>
 
+                <div className="solarSelectData">
                     <select id="dataTimeInterval">
                         <option value="daily">Today</option>
                         <option value="weekly">This week</option>
@@ -275,10 +174,16 @@ export default function SolarDetails() {
                         <option value="doughnut">Doughnut Chart</option>
                         <option value="pie">Pie Chart</option>
                     </select>
-
-                    {renderGraph()}
-                    {renderChart()}
                 </div>
+
+                <div className="solarDataGraph">
+                    {renderGraph()}
+                </div>  
+
+                <div className="solarDataChart">
+                    {renderChart()}  
+                </div> 
+                
             </body>
         </>
     );
