@@ -486,7 +486,7 @@ App-link {
     border-radius: 10px;
     padding: 20px;
     text-align: center;
-    width: 300px;
+    /*width: 300px;*/
     margin: 0 auto;
 }
 
@@ -495,22 +495,74 @@ App-link {
     color: #333;
 }
 
-.temperature-humidity-container p {
-    font-size: 18px;
-    color: #555;
-    margin: 10px 0;
+
+.tempInfo {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.temperature-graph-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.temperature-container {
+    background-color: #fff2cc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 20px;
+    width: 50%;
+
 }
 
 .temperature {
-    background-color: #ff6347;
-    border-radius: 5px;
-    padding: 10px;
+    height: 100px;
+    width: 200px;
+    display: block;
+    margin: auto;
+    text-align: center;    
 }
 
-.humidity {
+.temperature p {
+    font-size: 48px;
+    color: #555;
+}
+
+.temperature-graph {
+    padding: 10px;
+    margin: 10px;
+    width: 100%;
+}
+
+.humidity-container {
     background-color: #87ceeb;
     border-radius: 5px;
     padding: 10px;
+    margin: 20px;
+    width: 50%;
+
+}
+
+.humidity {
+    height: 100px;
+    width: 100%;
+    display: block;
+    margin: auto;
+    text-align: center;    
+}
+
+.humidity p {
+    font-size: 32px;
+    color: #555;
+}
+.humidity-graph {
+    padding: 10px;
+    margin: auto;
+    width: 70%;
+
 }
 
 header {
