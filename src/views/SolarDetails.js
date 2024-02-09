@@ -28,6 +28,7 @@ ChartJS.register(
 
 export default function SolarDetails() {
     const [solarData, setSolarData] = useState([]);
+    const [distributionData, setDistributionData] = useState([]);
     const [error, setError] = useState(null);
 
     function loadData(useDummyData) {
@@ -48,38 +49,85 @@ export default function SolarDetails() {
         }
     }
 
+    function loadDistributionData(testData) {
+        if (testData) {
+            const testData = [1, 2, 3, 4, 5];
+            setDistributionData(testData);
+        }
+        else {
+            axios.get(`http://localhost:8080/weeklypowerdistribution`)
+                .then (res => {
+                    console.log(res.data);
+                    setDistributionData(res.data.powerDistribution);
+                    setError(null);
+                })
+                .catch((err) => {
+                    console.log(err);
+                    setError(err);
+            });
+        }
+    }
+
     useEffect(() => {
         loadData(false);
+        loadDistributionData(false);
     }, []);
 
     const chartData = {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        labels: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
         datasets: [
             {
-                label: 'Sample Data',
                 data: solarData,
                 backgroundColor: [
-                    'rgba(255, 0, 0, 0.2)',
-                    'rgba(255, 127, 0, 0.2)', 
-                    'rgba(255, 255, 0, 0.2)', 
-                    'rgba(0, 255, 0, 0.2)', 
-                    'rgba(0, 0, 255, 0.2)', 
                     'rgba(75, 0, 130, 0.2)', 
-                    'rgba(148, 0, 211, 0.2)'
                 ],
                 borderColor: [
-                    'rgba(255, 0, 0, 1)',
-                    'rgba(255, 127, 0, 1)', 
-                    'rgba(255, 255, 0, 1)', 
-                    'rgba(0, 255, 0, 1)', 
-                    'rgba(0, 0, 255, 1)', 
                     'rgba(75, 0, 130, 1)', 
-                    'rgba(148, 0, 211, 1)'
                 ],
                 borderWidth: 1,
             },
         ],
     };
+
+    const graphConfig = {
+        plugins: {
+            legend: {
+                display: false,
+            }
+        }
+    };
+    
+    const doughnutData = {
+        labels: ['HVAC', 'Elevator System', 'IT/Networking', 'Lighting', 'Plug Loads'],
+        datasets: [
+            {
+                data: distributionData,
+                backgroundColor: [
+                    'rgba(0, 71, 143, 0.2)',
+                    'rgba(85, 83, 87, 0.2)',
+                    'rgba(75, 0, 130, 0.2)',
+                    'rgba(233, 217, 70, 0.2)',
+                    'rgba(128, 9, 72, 0.2)',
+                ],
+                borderColor: [
+                    'rgba(0, 71, 143 1)',
+                    'rgba(85, 83, 87, 1)',
+                    'rgba(75, 0, 130, 1)',
+                    'rgba(233, 217, 70, 1)',
+                    'rgba(128, 9, 72, 1)',
+                ],
+                borderWidth: 1,
+                offset: 25,
+                spacing: 0,
+            },
+        ],
+    }
+
+    // const doughnutConfig = {
+    //     plugins: {
+    //         cutout: '45%',
+    //     }
+    // };
 
     const [graphType, setGraphType] = useState('bar'); // initial graph
 
@@ -91,34 +139,20 @@ export default function SolarDetails() {
     const renderGraph = () => {
         switch (graphType) {
             case "bar":
-                return <Bar data={chartData} />;
+                return <Bar data={chartData} options={graphConfig} />;
             case "line":
-                return <Line data={chartData} />;
+                return <Line data={chartData} options={graphConfig} />;
             default:
-                return <Bar data={chartData} />;
+                return <Bar data={chartData} options={graphConfig} />;
         }
     }
 
 
     const [chartType, setChartType] = useState('doughnut'); // initial chart
 
-    const handleChartChange = (e) => {
-        console.log(e.target.value);
-        setChartType(e.target.value);
-    };
-
     const renderChart = () => {
-        switch (chartType) {
-            case "doughnut":
-                return <Doughnut data={chartData} backgroundColor={'rgba(255, 0, 0, 0.2)'}/>;
-            case "pie":
-                return <Pie data={chartData} />;
-            default:
-                return <Doughnut data={chartData} />;
-        }
+        return <Doughnut data={doughnutData} backgroundColor={'rgba(255, 0, 0, 0.2)'} />;
     }
-
-
 
     return (
         <>
@@ -131,13 +165,13 @@ export default function SolarDetails() {
                 <div className="solarInfo">
                     <h3>How is the Shiley-Marcos building powered?</h3>
                     <p>
-
+                        This is a sentence solely used for filler content.
                     </p>
 
                     <p>
-
+                        abcdefghijklmnopqrstuvwxyz.
                     </p>
-                    
+
                     <h3>About the Solar Farm at the Shiley-Marcos Center</h3>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend leo a mollis dapibus. Suspendisse 
@@ -177,11 +211,6 @@ export default function SolarDetails() {
                     <select value={graphType} onChange={handleGraphChange}>
                         <option value="bar">Bar Graph</option>
                         <option value="line">Line Graph</option>
-                    </select>
-
-                    <select value={chartType} onChange={handleChartChange}>
-                        <option value="doughnut">Doughnut Chart</option>
-                        <option value="pie">Pie Chart</option>
                     </select>
                 </div>
 
