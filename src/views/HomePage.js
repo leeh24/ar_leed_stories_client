@@ -29,8 +29,11 @@ export default function HomePage() {
                         </div>
                     </div>  
                     <div class="bottom-container">
-                    <div class="containerText">Shiley Marcos Center’s purpose is to provide adaptable lab environments, provide experimental learning opportunities, and establish third hub right here on campus. This building is filled with many systems that promote sustainability and achieve LEED certification. Theses systems include the HVAC system, solar panels, radiant slabs, and more. 
-                                </div>
+                    <div class="containerText">
+    The Shiley Marcos Center is a state-of-the-art building designed with sustainability and innovation at its core. It features a variety of energy-saving systems, including an advanced HVAC system, solar panels, and radiant slab systems, contributing to its LEED certification.
+
+    But this center is more than just a "green" building. It's a hub for innovation, equipped with maker spaces, computer labs, classrooms, and study areas. These spaces are designed to foster creativity, collaboration, and learning, making the Shiley Marcos Center a leading destination for forward-thinking education.
+</div>
                     </div>
                 </div>
             
