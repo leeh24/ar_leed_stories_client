@@ -97,7 +97,7 @@ App-header {
     width: 100vw;
     height: 70px;
     background-color: transparent;
-    border-bottom: 1px rgba(16, 16, 16, 0.1);
+    border-bottom: 1px rgba(163, 21, 199, 0.1);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -230,16 +230,18 @@ App-link {
     display: inline-block;
     cursor: pointer;
     color: #000000;
+    text-decoration: none;
     font-family: Arial;
-    font-size: 20px;
+    font-size: 23px;
     font-weight: bold;
-    padding: 13px 32px;
+    padding: 15px 32px;
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 15px;
     border: none;
     flex-grow: 1;
     text-align: center;
+    text-shadow: 2px 2px 4px rgba(36, 21, 43, 0.5); /* Add this */
 }
 
 .navButton:hover {
@@ -459,9 +461,10 @@ App-link {
 .bottom-container {
     display: flex;
     justify-content: center;
+    text-align: center;
     align-items: center;
     height: 100%;
-    width: 100vw;
+    width: 60vw;
 }
 
 .containerTitle {
@@ -469,6 +472,7 @@ App-link {
     font-weight: bold;
     text-align: center;
     margin-bottom: 0.5rem;
+    text-align: center;
     font-family: 'Comic Sans MS', cursive, sans-serif;
 }
 
@@ -493,7 +497,15 @@ App-link {
 .temperature-humidity-container h1 {
     font-size: 24px;
     color: #333;
+    display: flex;
+    justify-content: space-between; /* Add this */
 }
+
+.text-container {
+    flex: 1; /* This will make the text and the graph take up equal amounts of space */
+    padding-right: 20px; /* This will add some space between the text and the graph */
+}
+
 
 
 .tempInfo {
@@ -565,31 +577,59 @@ App-link {
 
 }
 
+
+
+.airQuality {
+    height: 100px;
+    width: 100%;
+    display: block;
+    margin: auto;
+    text-align: center;    
+    flex: 1; /* Add this */
+    margin-right: 20px; /* Add this */
+}
+.airQuality-graph {
+    padding: 10px;
+    margin: auto;
+    width: 70%;
+    flex: 2; /* Add this */
+}
+
 header {
     width: 100vw;
     height: 100px;
     border-bottom: solid 1px rgba(16, 16, 16, 0.1);
     font-family: 'Poppins';
+    display: flex; /* Add this */
+    justify-content: space-between; /* Add this */
+    align-items: center; /* Add this */
+    padding: 2vw; /* Add some padding to the sides of the header */
+    padding-bottom: 3vh;
 }
 
 header .inner {
     width: 1300px;
-    /* This is the inner width of the content inside of your header (80%, etc) */
+    align-items: center;
     height: 100%;
-    display: block;
+    display: flex; /* Change this from block to flex */
     margin: 0 auto;
 }
 
 header .logo {
-    display: table;
+    display: flex; /* Change this from table to flex */
+    position: static;
+    left:2vw;
     height: 100%;
-    float: left;
+    align-items: center; /* Add this */
+    color: white;
 }
+
 
 header .logo div {
     height: 100%;
-    display: table-cell;
-    vertical-align: middle;
+    display: flex; /* Change this from table-cell to flex */
+    align-items: center; /* Add this */
+    
 }
 
 header .logo img {
@@ -766,7 +806,7 @@ header nav .button:hover {
         margin-left: auto;
         margin-right: auto;
         width: 50%;
-        /* or any other value */
+       
     }
     .containerText {
         margin-top: 1rem;

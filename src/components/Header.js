@@ -19,7 +19,7 @@ export default function Header() {
                     </Link> 
                 </div>
             </div>
-
+            <div class="buttons">
             <nav>
                 <li><span>
                     <NavLink to="/leed-stories" activeClassName="activeLink" className="navButton">
@@ -42,6 +42,7 @@ export default function Header() {
                     </NavLink>
                 </span></li>
             </nav>
+            </div>
         </div>
     </header>
 
