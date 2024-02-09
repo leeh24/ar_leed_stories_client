@@ -1,8 +1,7 @@
 import React from "react";
 import Header from "../components/Header";
-import buildingVid from "../images/UP Footage.mp4";
 import logo from "../images/up_shiley_marcos_logo_trans.png";
-import buildingPhoto from "../images/UPImage.png";
+import buildingPhoto from "../images//ShileyPhotos/IMG_4502.png";
 import ImageSlider from "../views/imageSlider";
 import { SliderData } from "./sliderData";
 
