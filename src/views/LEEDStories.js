@@ -55,7 +55,7 @@ useEffect(() => {
                     <div className="row">
                     <div id="card">
                         
-                    <model-viewer src="./model/Solar_Panel.glb"
+                    <model-viewer src="./model/solar.glb"
                   ios-src="./model/Solar_panel.usdz"
                   poster="./model/Solar_Panel.png"
                   shadow-intensity="1"
@@ -82,7 +82,7 @@ useEffect(() => {
                 </div>
                 <div id="card">
                         
-                    <model-viewer src="./model/Coal_deposit.glb"
+                    <model-viewer src="./model/coal.glb"
                   ios-src="./model/Coal_deposit.usdz"
                   poster="./model/Coal_deposit.png"
                   shadow-intensity="1"
