@@ -124,11 +124,20 @@ export default function SolarDetails() {
         <>
             <Header />
             <body /* style={{ backgroundImage: `url(${bgImage})`, backgroundRepeat: "no-repeat", backgroundSize: "cover", opacity:1}} */>
-                <h1 style={{ textAlign: "center", color: "#7752b4" }}>Solar Energy Usage</h1>
+                <h1 style={{ textAlign: "center", color: "#7752b4" }}>Consumption of Electricity and Solar Energy</h1>
 
                 <br></br>
 
                 <div className="solarInfo">
+                    <h3>How is the Shiley-Marcos building powered?</h3>
+                    <p>
+
+                    </p>
+
+                    <p>
+
+                    </p>
+                    
                     <h3>About the Solar Farm at the Shiley-Marcos Center</h3>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend leo a mollis dapibus. Suspendisse 
@@ -150,7 +159,7 @@ export default function SolarDetails() {
 
                 <br></br>
 
-                <h3>Analyze solar energy data</h3>
+                <h3>Analyze electricity/solar data</h3>
 
                 <div className="solarSelectData">
                     <select id="dataTimeInterval">

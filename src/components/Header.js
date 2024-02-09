@@ -27,18 +27,8 @@ export default function Header() {
                     </NavLink>
                 </span></li>
                 <li><span>
-                    <NavLink to="/electric-details" activeClassName="activeLink" className="navButton">
-                        Electricity
-                    </NavLink>
-                </span></li>
-                <li><span>
                     <NavLink to="/humidityTemp-details" activeClassName="activeLink" className="navButton">
                         Humidity/Temperature
-                    </NavLink>
-                </span></li>
-                <li><span>
-                    <NavLink to="/water-details" activeClassName="activeLink" className="navButton">
-                        Water
                     </NavLink>
                 </span></li>
                 <li><span>
@@ -48,7 +38,7 @@ export default function Header() {
                 </span></li>
                 <li><span>
                     <NavLink to="/solar-details" activeClassName="activeLink" className="navButton">
-                        Solar
+                        Electricity/Solar
                     </NavLink>
                 </span></li>
             </nav>
