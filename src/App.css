@@ -241,7 +241,7 @@ App-link {
     border: none;
     flex-grow: 1;
     text-align: center;
-    text-shadow: 2px 2px 4px rgba(36, 21, 43, 0.5); /* Add this */
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 
 .navButton:hover {
