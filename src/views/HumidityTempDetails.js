@@ -12,6 +12,8 @@ ChartJS.register(ArcElement, Tooltip, Legend, Title);
 
 export default function HumidityTempDetails() {
 
+    const isUsingDummyData = false; 
+
     // Initialize state for temperature and humidity with dummy values
     const [temperature, setTemperature] = useState(25); // Dummy temperature value in Celsius
     const [humidity, setHumidity] = useState(60); // Dummy humidity value in percentage
@@ -23,14 +25,14 @@ export default function HumidityTempDetails() {
       //alert(event.target.checked);
       setChecked(event.target.checked);
       if (event.target.checked == true) {
-        loadTemperatureDataOverDay(false, "indoor");
+        loadTemperatureDataOverDay(isUsingDummyData, "indoor");
       } else {
-        loadTemperatureDataOverDay(false, "outdoor");
+        loadTemperatureDataOverDay(isUsingDummyData, "outdoor");
       }
     };
 
     useEffect(() => {
-      loadTemperatureDataOverDay(false, "indoor");
+      loadTemperatureDataOverDay(isUsingDummyData, "indoor");
 
         // Simulate updating temperature and humidity every 5 seconds
         const intervalId = setInterval(() => {
