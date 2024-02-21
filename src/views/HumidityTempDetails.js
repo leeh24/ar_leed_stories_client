@@ -48,8 +48,12 @@ export default function HumidityTempDetails() {
 
     function loadTemperatureDataOverDay(useDummyData, runningEnv) {
         if (useDummyData) {
-            const dummyData = [25, 24, 23, 26, 28, 27, 26, 24, 23, 27, 25, 24,
-                    25, 24, 23, 26, 28, 27, 26, 24, 23, 27, 25, 24];
+            var dummyData = [60, 70, 75, 61, 55, 63, 76, 71, 62, 68, 69, 73,
+                    67, 75, 59, 60, 78, 90, 66, 77, 50, 55, 71, 63];
+            if (runningEnv == "outdoor") {
+              dummyData = [25, 15, 23, 42, 28, 27, 26, 24, 75, 27, 55, 24,
+                66, 43, 23, 60, 28, 90, 32, 100, 50, 85, 25, 95];
+            }
             setTemperatureDataOverDay(dummyData);
         } else {
             const url = "http://localhost:8080/dailytemperature?env=" + runningEnv;
@@ -71,7 +75,7 @@ export default function HumidityTempDetails() {
         y:
           {
             min: 0,
-            max: 50,
+            max: 120,
             stepSize: 5,
           },
       },
