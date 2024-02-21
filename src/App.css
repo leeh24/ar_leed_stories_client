@@ -494,6 +494,18 @@ App-link {
     margin: 0 auto;
 }
 
+.airquality-container {
+    background-color: #0098C3;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    /*width: 300px;*/
+    margin: 0 auto;
+}
+
+
+
+
 .temperature-humidity-container h1 {
     font-size: 24px;
     color: #333;

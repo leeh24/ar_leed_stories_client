@@ -72,7 +72,7 @@ export default function AirQualityDetails() {
     return (
         <>
             <Header />
-            <div className="temperature-humidity-container">
+            <div className="airquality-container">
              <div className="tempInfo">
                     <h2 style = {{textAlign:"center"}}>Air Quality Index</h2>
               </div>
