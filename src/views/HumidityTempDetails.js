@@ -1,4 +1,5 @@
 import React, {useEffect,useState} from "react";
+import plans from "../images/plans.png";
 import axios from 'axios';
 import Header from "../components/Header";
 import { Line } from 'react-chartjs-2';
@@ -152,8 +153,13 @@ export default function HumidityTempDetails() {
                       }
                     </BarBounds>
                   </div>
-                </div>
+                    
+                  
+                   
+                  </div>
               </div>
+
+            <img class="displayplans" src={plans}></img>
             </div>
         </>
     );
