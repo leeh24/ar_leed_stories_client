@@ -5,6 +5,8 @@ import Header from "../components/Header";
 import { Line } from 'react-chartjs-2';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend, Title } from 'chart.js';
+import Switch from '@mui/material/Switch';
+
 ChartJS.register(ArcElement, Tooltip, Legend, Title);
 
 
@@ -15,9 +17,20 @@ export default function HumidityTempDetails() {
     const [humidity, setHumidity] = useState(60); // Dummy humidity value in percentage
     const [temperatureDataOverDay, setTemperatureDataOverDay] = useState([]);
     const [error, setError] = useState(null);
+    const [checked, setChecked] = useState(true);
+
+    const handleChange = (event) => {
+      //alert(event.target.checked);
+      setChecked(event.target.checked);
+      if (event.target.checked == true) {
+        loadTemperatureDataOverDay(false, "indoor");
+      } else {
+        loadTemperatureDataOverDay(false, "outdoor");
+      }
+    };
 
     useEffect(() => {
-      loadTemperatureDataOverDay(false);
+      loadTemperatureDataOverDay(false, "indoor");
 
         // Simulate updating temperature and humidity every 5 seconds
         const intervalId = setInterval(() => {
@@ -33,21 +46,22 @@ export default function HumidityTempDetails() {
     }, []);
 
 
-    function loadTemperatureDataOverDay(useDummyData) {
+    function loadTemperatureDataOverDay(useDummyData, runningEnv) {
         if (useDummyData) {
             const dummyData = [25, 24, 23, 26, 28, 27, 26, 24, 23, 27, 25, 24,
                     25, 24, 23, 26, 28, 27, 26, 24, 23, 27, 25, 24];
             setTemperatureDataOverDay(dummyData);
         } else {
-            axios.get(`http://localhost:8080/dailytemperature`)
-                .then (res => {
-                    console.log(res.data);
-                    setTemperatureDataOverDay(res.data.temperatureUsage);
-                    setError(null);
-                })
-                .catch((err) => {
-                    console.log(err);
-                    setError(err);
+            const url = "http://localhost:8080/dailytemperature?env=" + runningEnv;
+            axios.get(url)
+              .then (res => {
+                  console.log(res.data);
+                  setTemperatureDataOverDay(res.data.temperatureUsage);
+                  setError(null);
+              })
+              .catch((err) => {
+                  console.log(err);
+                  setError(err);
             });
         }
     }
@@ -117,6 +131,13 @@ export default function HumidityTempDetails() {
                     <Line data={temperatureLineData} options={lineOptions}/>
                     <br/>
                     <h5>Temperature Over Day</h5>
+                    Outdoor
+                    <Switch
+                      checked={checked}
+                      onChange={handleChange}
+                      inputProps={{ 'aria-label': 'Indoor Temperature' }}
+                    />
+                    Indoor
                   </div>
                 </div>
                 <div className="humidity-container">
