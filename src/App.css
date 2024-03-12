@@ -394,6 +394,137 @@ App-link {
     width: 600px;
 }
 
+.room-overlay {
+    transition: background-color 1s ease;
+  }
+  
+  .blue {
+    background-color: rgba(0, 0, 255, 0.7);
+  }
+  
+  .green {
+    background-color: rgba(0, 255, 0, 0.7);
+  }
+  
+  .red {
+    background-color: rgba(255, 0, 0, 0.7);
+  }
+  
+  .default {
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+
+
+.app {
+    text-align: center;
+  }
+
+  .dropdown-menu {
+    display: none;
+}
+
+.navButton:hover .dropdown-menu {
+    display: block;
+}
+
+
+
+
+.floorPlanHome {
+    position: relative;
+}
+
+.button-container {
+    position: absolute;
+    top: 20%;
+    right: 20px;
+    text-align: center;
+}
+
+
+  .floor-plan-container {
+    top: 5%;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.floor-plan-container.fade-out {
+    opacity: 0;
+}
+
+.floor-plan-container.fade-in {
+    opacity: 1;
+}
+
+/* Styling the map */
+
+  
+  /* Overlay style */
+
+  .room-overlay {
+    position: absolute;
+    transition: transform 0.3s ease-in-out;
+  }
+  .floorplan-container {
+    max-width: 90%; /* Adjust the width as needed */
+    margin: 0 auto; /* Center the container horizontally */
+    position: absolute; /* Required for absolute positioning of overlay */
+    width: 100%; /* Ensure the container takes the full width */
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+   
+  }
+  
+  .room-overlay div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    color: white;
+    text-align: center;
+  }
+  .room-overlay:hover {
+    transform: scale(1.02); /* Add this */
+  }
+  
+  .floorplan-image {
+    max-width: 100vw;
+    height: auto;
+  }
+  
+
+  .floorplan-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .room {
+    position: absolute;
+    /* Add your styling for room position, size, etc. */
+  }
+  
+  .popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: white;
+    border: 1px solid black;
+  }
+  
+  
+  
 
 /* airDetails.css */
 

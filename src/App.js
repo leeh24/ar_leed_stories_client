@@ -7,6 +7,7 @@ import WaterDetails from './views/WaterDetails';
 import HumidityTempDetails from './views/HumidityTempDetails';
 import AirDetails from './views/AirDetails';
 import SolarDetails from './views/SolarDetails';
+import MainFloorPlan from './views/mainFloorPlan';
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import './App.css';
 
@@ -24,6 +25,7 @@ function App() {
           <Route exact path="/air-details" element={<AirDetails />}></Route>
           <Route exact path="/solar-details" element={<SolarDetails />}></Route>
           <Route exact path="/test-page" element={<Test />}></Route>
+          <Route exact path="/floor" element={<MainFloorPlan />}></Route>
         </Routes>
       </BrowserRouter>
     

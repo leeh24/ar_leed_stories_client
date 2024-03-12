@@ -3,7 +3,7 @@ import { SliderData } from './sliderData';
 import {FaArrowAltCircleRight, FaArrowAltCircleLeft} from 'react-icons/fa';
 import { CgScrollV } from "react-icons/cg";
 
-const ImageSlider = ({ slides }) => { 
+const ImageSlider2 = ({ slides }) => { 
     const [current, setCurrent] = useState(0);
     //const length = slides.length;
     const length = 3;
@@ -39,10 +39,10 @@ const ImageSlider = ({ slides }) => {
             <CgScrollV className='scroll-icon' onClick={ scrollDown } />
 
             {SliderData.map((slide, index) => {
-                return <img src = {slide.image} alt = 'Shiley Photo' className={`Homeimage ${index === current ? 'fade-in' : 'fade-out'}`} />;
+                return <img src = {slide.image} alt = 'Shiley Photo' style={{ filter: 'blur(7px)'}} className={`Homeimage ${index === current ? 'fade-in' : 'fade-out'}`} />;
             })}
         </>
     );
 };
 
-export default ImageSlider;
+export default ImageSlider2;
