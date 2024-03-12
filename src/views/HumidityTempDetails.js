@@ -1,22 +1,38 @@
 import React, {useEffect,useState} from "react";
+import plans from "../images/plans.png";
 import axios from 'axios';
 import Header from "../components/Header";
 import { Line } from 'react-chartjs-2';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend, Title } from 'chart.js';
+import Switch from '@mui/material/Switch';
+
 ChartJS.register(ArcElement, Tooltip, Legend, Title);
 
 
 export default function HumidityTempDetails() {
+
+    const isUsingDummyData = false; 
 
     // Initialize state for temperature and humidity with dummy values
     const [temperature, setTemperature] = useState(25); // Dummy temperature value in Celsius
     const [humidity, setHumidity] = useState(60); // Dummy humidity value in percentage
     const [temperatureDataOverDay, setTemperatureDataOverDay] = useState([]);
     const [error, setError] = useState(null);
+    const [checked, setChecked] = useState(true);
+
+    const handleChange = (event) => {
+      //alert(event.target.checked);
+      setChecked(event.target.checked);
+      if (event.target.checked == true) {
+        loadTemperatureDataOverDay(isUsingDummyData, "indoor");
+      } else {
+        loadTemperatureDataOverDay(isUsingDummyData, "outdoor");
+      }
+    };
 
     useEffect(() => {
-      loadTemperatureDataOverDay(false);
+      loadTemperatureDataOverDay(isUsingDummyData, "indoor");
 
         // Simulate updating temperature and humidity every 5 seconds
         const intervalId = setInterval(() => {
@@ -32,21 +48,26 @@ export default function HumidityTempDetails() {
     }, []);
 
 
-    function loadTemperatureDataOverDay(useDummyData) {
+    function loadTemperatureDataOverDay(useDummyData, runningEnv) {
         if (useDummyData) {
-            const dummyData = [25, 24, 23, 26, 28, 27, 26, 24, 23, 27, 25, 24,
-                    25, 24, 23, 26, 28, 27, 26, 24, 23, 27, 25, 24];
+            var dummyData = [60, 70, 75, 61, 55, 63, 76, 71, 62, 68, 69, 73,
+                    67, 75, 59, 60, 78, 90, 66, 77, 50, 55, 71, 63];
+            if (runningEnv == "outdoor") {
+              dummyData = [25, 15, 23, 42, 28, 27, 26, 24, 75, 27, 55, 24,
+                66, 43, 23, 60, 28, 90, 32, 100, 50, 85, 25, 95];
+            }
             setTemperatureDataOverDay(dummyData);
         } else {
-            axios.get(`http://localhost:8080/dailytemperature`)
-                .then (res => {
-                    console.log(res.data);
-                    setTemperatureDataOverDay(res.data.temperatureUsage);
-                    setError(null);
-                })
-                .catch((err) => {
-                    console.log(err);
-                    setError(err);
+            const url = "http://localhost:8080/dailytemperature?env=" + runningEnv;
+            axios.get(url)
+              .then (res => {
+                  console.log(res.data);
+                  setTemperatureDataOverDay(res.data.temperatureUsage);
+                  setError(null);
+              })
+              .catch((err) => {
+                  console.log(err);
+                  setError(err);
             });
         }
     }
@@ -56,7 +77,7 @@ export default function HumidityTempDetails() {
         y:
           {
             min: 0,
-            max: 50,
+            max: 120,
             stepSize: 5,
           },
       },
@@ -116,6 +137,13 @@ export default function HumidityTempDetails() {
                     <Line data={temperatureLineData} options={lineOptions}/>
                     <br/>
                     <h5>Temperature Over Day</h5>
+                    Outdoor
+                    <Switch
+                      checked={checked}
+                      onChange={handleChange}
+                      inputProps={{ 'aria-label': 'Indoor Temperature' }}
+                    />
+                    Indoor
                   </div>
                 </div>
                 <div className="humidity-container">
@@ -152,8 +180,13 @@ export default function HumidityTempDetails() {
                       }
                     </BarBounds>
                   </div>
-                </div>
+                    
+                  
+                   
+                  </div>
               </div>
+
+            <img class="displayplans" src={plans}></img>
             </div>
         </>
     );
