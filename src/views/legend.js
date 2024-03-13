@@ -8,11 +8,15 @@ const Legend = () => {
             <ul>
                 <li>
                     <span className="legend-color" style={{ backgroundColor: 'rgba(51, 153, 255, 0.7)', width: '30px', height: '20px', display: 'inline-block', marginRight: '5px' }}></span>
-                    <span style={{ color: 'white', textShadow: '1px 1px 2px black' }}>≤ 45°F</span>
+                    <span style={{ color: 'white', textShadow: '1px 1px 2px black' }}>≤ 61°F</span>
                 </li>
                 <li>
-                    <span className="legend-color" style={{ backgroundColor: 'rgba(102, 204, 204, 0.7)', width: '30px', height: '20px', display: 'inline-block', marginRight: '5px' }}></span>
-                    <span style={{ color: 'white', textShadow: '1px 1px 2px black' }}>≤ 67°F</span>
+                    <span className="legend-color" style={{ backgroundColor: 'rgba(102, 180, 204, 0.7)', width: '30px', height: '20px', display: 'inline-block', marginRight: '5px' }}></span>
+                    <span style={{ color: 'white', textShadow: '1px 1px 2px black' }}>≤ 62°F</span>
+                </li>
+                <li>
+                    <span className="legend-color" style={{ backgroundColor: 'rgba(102, 234, 204, 0.7)', width: '30px', height: '20px', display: 'inline-block', marginRight: '5px' }}></span>
+                    <span style={{ color: 'white', textShadow: '1px 1px 2px black' }}>≤ 65°F</span>
                 </li>
                 <li>
                     <span className="legend-color" style={{ backgroundColor: 'rgba(153, 255, 153, 0.7)', width: '30px', height: '20px', display: 'inline-block', marginRight: '5px' }}></span>

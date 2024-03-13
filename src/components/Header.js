@@ -8,14 +8,23 @@ export default function Header() {
     const navigate = useNavigate();
     const [isSidebarOpen, setSidebarOpen] = useState(true);
     const [isDropdownOpen, setDropdownOpen] = useState(false);
+    const [isFadingOut, setFadingOut] = useState(false); // Track fade-out state
 
     const toggleDropdown = () => {
         setDropdownOpen(!isDropdownOpen);
     };
 
+    // Function to handle navigation with fade-out effect
+    const handleNavigation = (path) => {
+        setFadingOut(true); // Start fading out
+        setTimeout(() => {
+            navigate(path); // Navigate after fade-out
+        }, 500); // Wait for fade-out transition to complete
+    };
+
     return (
         <>
-            <header>
+            <header className={isFadingOut ? 'fade-out' : 'fade-in'}>
                 <div className="inner">
                     <div className="logo">
                         <div>

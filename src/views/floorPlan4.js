@@ -86,22 +86,25 @@ const FloorPlan4 = () => {
     } else {
       temperatureText = `${temperature}°F`;
       if (temperature <= 45) {
-        backgroundColor = 'rgba(51, 153, 255, 0.7)'; // Light Blue with 0.7 transparency
-    } else if (temperature <= 67) {
-        backgroundColor = 'rgba(102, 204, 204, 0.7)'; // Very light green almost blue like teal with 0.7 transparency
-    } else if (temperature <= 73) {
-        backgroundColor = 'rgba(153, 255, 153, 0.7)'; // Lightish green with 0.7 transparency
-    } else if (temperature <= 76) {
-        backgroundColor = 'rgba(170, 255, 170, 0.7)'; // Light green with 0.7 transparency
-    } else if (temperature <= 79) {
-        backgroundColor = 'rgba(153, 204, 153, 0.7)'; // Darker green not too dark with 0.7 transparency
-    } else if (temperature <= 83) {
-        backgroundColor = 'rgba(102, 204, 102, 0.7)'; // Darker green with 0.7 transparency
-    } else if (temperature <= 85) {
-        backgroundColor = 'rgba(255, 204, 153, 0.7)'; // Very light orange with 0.7 transparency
-    } else {
-        backgroundColor = 'rgba(255, 204, 102, 0.7)'; // Light orange with 0.7 transparency
-    }
+          backgroundColor = 'rgba(51, 153, 255, 0.7)'; // Light Blue with 0.7 transparency
+      } else if (temperature <= 62) {
+          backgroundColor = 'rgba(102, 180, 204, 0.7)'; // Very light green almost blue like teal with 0.7 transparency
+      } else if (temperature <= 65) {
+        backgroundColor = 'rgba(102, 244, 204, 0.7)'; // Very light green almost blue like teal with 0.7 transparency
+      }
+      else if (temperature <= 73) {
+          backgroundColor = 'rgba(153, 255, 153, 0.7)'; // Lightish green with 0.7 transparency
+      } else if (temperature <= 76) {
+          backgroundColor = 'rgba(170, 255, 170, 0.7)'; // Light green with 0.7 transparency
+      } else if (temperature <= 79) {
+          backgroundColor = 'rgba(153, 204, 153, 0.7)'; // Darker green not too dark with 0.7 transparency
+      } else if (temperature <= 83) {
+          backgroundColor = 'rgba(102, 204, 102, 0.7)'; // Darker green with 0.7 transparency
+      } else if (temperature <= 85) {
+          backgroundColor = 'rgba(255, 204, 153, 0.7)'; // Very light orange with 0.7 transparency
+      } else {
+          backgroundColor = 'rgba(255, 204, 102, 0.7)'; // Light orange with 0.7 transparency
+      }
     }
   
     return {

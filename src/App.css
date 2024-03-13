@@ -748,6 +748,7 @@ header {
     align-items: center; /* Add this */
     padding: 2vw; /* Add some padding to the sides of the header */
     padding-bottom: 3vh;
+    transition: opacity 1s ease-out; /* Adjust the duration as needed */
 }
 
 header .inner {
@@ -1100,6 +1101,14 @@ footer {
  :not(:defined)>* {
     display: none;
 }
+.fade-in {
+    opacity: 1;
+  }
+  
+  .fade-out {
+    opacity: 0;
+  }
+  
 
 .collapsible {
     background-color: #eee;

@@ -94,9 +94,12 @@ const FloorPlan1 = () => {
       temperatureText = `${temperature}°F`;
       if (temperature <= 45) {
           backgroundColor = 'rgba(51, 153, 255, 0.7)'; // Light Blue with 0.7 transparency
-      } else if (temperature <= 67) {
-          backgroundColor = 'rgba(102, 204, 204, 0.7)'; // Very light green almost blue like teal with 0.7 transparency
-      } else if (temperature <= 73) {
+      } else if (temperature <= 62) {
+          backgroundColor = 'rgba(102, 180, 204, 0.7)'; // Very light green almost blue like teal with 0.7 transparency
+      } else if (temperature <= 65) {
+        backgroundColor = 'rgba(102, 244, 204, 0.7)'; // Very light green almost blue like teal with 0.7 transparency
+      }
+      else if (temperature <= 73) {
           backgroundColor = 'rgba(153, 255, 153, 0.7)'; // Lightish green with 0.7 transparency
       } else if (temperature <= 76) {
           backgroundColor = 'rgba(170, 255, 170, 0.7)'; // Light green with 0.7 transparency
