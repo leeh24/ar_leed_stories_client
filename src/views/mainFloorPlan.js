@@ -7,6 +7,7 @@ import FloorPlan1 from "./floorPlan1";
 import FloorPlan2 from "./floorPlan2";
 import FloorPlan3 from "./floorPlan3";
 import FloorPlan4 from "./floorPlan4";
+import Legend from './legend';
 // Import other floor plan components as needed
 
 const MainFloorPlan = () => {
@@ -32,9 +33,11 @@ const MainFloorPlan = () => {
         <>
             <Header />
             <div className='floorPlanHome'>
+                
                 {/* Render the selected floor plan */}
-                <div className="floor-plan-container">
+                <div className="floor-plan-container" style={{ transition: 'opacity 0.5s', opacity: 1 }}>
                     {renderFloorPlan()}
+     
                 </div>
                 {/* Buttons positioned on the right side */}
                 <div style={{ position: 'absolute', top: '30%', right: '20px', textAlign: 'center' }}>
@@ -47,6 +50,8 @@ const MainFloorPlan = () => {
                     <br />
                     <button style={buttonStyle} onClick={() => setSelectedFloorPlan(4)}>Floor Plan 4</button>
                     {/* Add more buttons for other floor plans as needed */}
+                    
+                    <Legend />
                 </div>
             </div>
             <div className="home">

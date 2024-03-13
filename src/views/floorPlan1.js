@@ -23,30 +23,42 @@ const FloorPlan1 = () => {
   
   useEffect(() => {
     const updateImageDimensions = () => {
-      if (floorplanRef.current) {
+      const currentRef = floorplanRef.current;
+      if (currentRef) {
         setImageDimensions({
-          width: floorplanRef.current.offsetWidth,
-          height: floorplanRef.current.offsetHeight
+          width: currentRef.offsetWidth,
+          height: currentRef.offsetHeight
         });
       }
     };
-    updateImageDimensions();
-
+  
     const handleResize = () => {
       updateImageDimensions();
     };
-
+  
     window.addEventListener('resize', handleResize);
-
+  
+    // Call updateImageDimensions once the image has loaded
+    if (floorplanRef.current.complete) {
+      updateImageDimensions();
+    } else {
+      floorplanRef.current.addEventListener('load', updateImageDimensions);
+    }
+  
     return () => {
       window.removeEventListener('resize', handleResize);
+      const currentRef = floorplanRef.current;
+      if (currentRef) {
+        currentRef.removeEventListener('load', updateImageDimensions);
+      }
     };
   }, []);
+  
 
   useEffect(() => {
     const interval = setInterval(() => {
       updateTemperature();
-    }, 5000);
+    }, 9000);
 
     return () => clearInterval(interval);
   }, []);
@@ -81,21 +93,27 @@ const FloorPlan1 = () => {
     } else {
       temperatureText = `${temperature}°F`;
       if (temperature <= 45) {
-        backgroundColor = 'rgba(51, 153, 255, 0.7)'; // Light Blue with 0.7 transparency
+          backgroundColor = 'rgba(51, 153, 255, 0.7)'; // Light Blue with 0.7 transparency
       } else if (temperature <= 67) {
-        backgroundColor = 'rgba(102, 204, 255, 0.7)'; // Sky Blue with 0.7 transparency
+          backgroundColor = 'rgba(102, 204, 204, 0.7)'; // Very light green almost blue like teal with 0.7 transparency
+      } else if (temperature <= 73) {
+          backgroundColor = 'rgba(153, 255, 153, 0.7)'; // Lightish green with 0.7 transparency
       } else if (temperature <= 76) {
-        backgroundColor = 'rgba(153, 255, 153, 0.7)';
+          backgroundColor = 'rgba(170, 255, 170, 0.7)'; // Light green with 0.7 transparency
+      } else if (temperature <= 79) {
+          backgroundColor = 'rgba(153, 204, 153, 0.7)'; // Darker green not too dark with 0.7 transparency
+      } else if (temperature <= 83) {
+          backgroundColor = 'rgba(102, 204, 102, 0.7)'; // Darker green with 0.7 transparency
       } else if (temperature <= 85) {
-        backgroundColor = 'rgba(255, 153, 51, 0.7)'; // Orange with 0.7 transparency
+          backgroundColor = 'rgba(255, 204, 153, 0.7)'; // Very light orange with 0.7 transparency
       } else {
-        backgroundColor = 'rgba(255, 102, 102, 0.7)'; // Light Red with 0.7 transparency
+          backgroundColor = 'rgba(255, 204, 102, 0.7)'; // Light orange with 0.7 transparency
       }
-    }
+  }
   
     return {
       backgroundColor,
-      transition: 'background-color 0.9s ease', // Smooth transition
+      transition: 'background-color 1.2s ease', // Smooth transition
       temperatureText,
     };
   };

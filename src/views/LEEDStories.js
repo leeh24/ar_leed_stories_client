@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import Header from "../components/Header";
 import "@google/model-viewer/dist/model-viewer";
+import ImageSlider2 from "./imageSlider2";
+import { SliderData } from "./sliderData";
 
 export default function LEEDStories() {
     const [isOpen, setIsOpen] = useState([false, false, false]);
@@ -51,17 +53,16 @@ useEffect(() => {
     return (
         <>
             <Header />
-                <body>
+            <div className='floorPlanHome'>
                     <div className="row">
                     <div id="card">
-                        
-                    <model-viewer src="./model/solar.glb"
-                  poster="./model/Solar_Panel.png"
-                  shadow-intensity="1"
-                  camera-controls
-                  auto-rotate ar>
-                <div className="annotation">Fun Fact: These are the first solar panels built on campus!</div>
-                </model-viewer>
+                        <model-viewer src="./model/solar.glb"
+                    poster="./model/Solar_Panel.png"
+                    shadow-intensity="1"
+                    camera-controls
+                    auto-rotate ar>
+                    <div className="annotation">Fun Fact: These are the first solar panels built on campus!</div>
+                        </model-viewer>
 
                 <section class="attribution">
                     <span>
@@ -79,8 +80,7 @@ useEffect(() => {
                     </section>  
 
                 </div>
-                <div id="card">
-                        
+                <div id="card">      
                     <model-viewer src="./model/coal.glb"
                   poster="./model/Coal_deposit.png"
                   shadow-intensity="1"
@@ -105,7 +105,13 @@ useEffect(() => {
             
             <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.1/model-viewer.min.js"></script>
             
-            </body>
-        </>
+            </div>
+            <div className="home">
+                <div className="homeVideoContainer" >
+                    <ImageSlider2 slides={SliderData} style={{ filter: 'blur(30px)'}} />
+                </div>
+            </div>
+            </>
+    
     );
 }
