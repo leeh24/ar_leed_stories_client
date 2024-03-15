@@ -101,7 +101,7 @@ useEffect(() => {
                     </span>
                     </section>   
                 </div>
-                {/* <div id="card">
+                <div id="card">
                         <model-viewer src="./model/container.glb"
                     shadow-intensity="1"
                     camera-controls
@@ -122,7 +122,7 @@ useEffect(() => {
                     </span>
                     </section>  
 
-                </div> */}
+                </div>
             </div>
             
             <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.1/model-viewer.min.js"></script>
