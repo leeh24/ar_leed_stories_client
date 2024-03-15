@@ -540,25 +540,33 @@ App-link {
 }
 
 .solarSelectData {
+    margin-left: 10px;
+    position: relative;
+}
+
+.solarSelectGraph {
     margin-left: 5px;
     position: relative;
 }
 
 .solarDataGraph {
     margin-left: 10px;
+    margin-right: 20px;
     height: 600px;
     width: 50%;
     justify-content: center;
     align-items: center;
     position: relative;
     display: inline-block;
+    background-color: rgb(255, 255, 255, 0.5) !important;
 }
 
 .solarDataChart {
     height: 600px;
-    width: 40%;
+    width: 30%;
     position: relative;
     display: inline-block;
+    background-color: rgb(255, 255, 255, 0.5) !important;
 }
 
 .scroll-test {

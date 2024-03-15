@@ -100,29 +100,30 @@ export default function SolarDetails() {
         ],
     };
 
-    
-
     const graphConfig = {
-        plugins: {
-            legend: {
-                display: true,
-                labels: {
-                    color: 'white', // Set color to white
-                }
-            }
-        },
-        scales: {
-            y: {
-                ticks: {
-                    color: 'white', // Set color to white
+        options: {
+            scales: {
+                y: {
+                    ticks: {
+                        color: 'white', // Set color to white
+                    }
+                },
+                x: {
+                    ticks: {
+                        color: 'white', // Set color to white
+                    }
                 }
             },
-            x: {
-                ticks: {
-                    color: 'white', // Set color to white
-                }
-            }
-        }
+            plugins: {
+                legend: {
+                    display: true,
+                    labels: {
+                        color: 'white', // Set color to white
+                    }
+                },
+            
+            }, 
+        },
     };
     
     const doughnutData = {
@@ -138,7 +139,7 @@ export default function SolarDetails() {
                     'rgba(128, 9, 72, 0.2)',
                 ],
                 borderColor: [
-                    'rgba(0, 71, 143 1)',
+                    'rgba(0, 71, 143, 1)',
                     'rgba(85, 83, 87, 1)',
                     'rgba(75, 0, 130, 1)',
                     'rgba(233, 217, 70, 1)',
@@ -151,14 +152,15 @@ export default function SolarDetails() {
         ],
     }
 
-   const doughnutConfig = {
+    const doughnutConfig = {
     plugins: {
         legend: {
             display: true,
             labels: {
                 color: 'white', // Set color to white
             }
-        }
+        },
+
     },
     // other configurations...
 };
@@ -257,7 +259,7 @@ export default function SolarDetails() {
                         <option value="yearly">This year</option>
                     </select>
 
-                    <select value={graphType} onChange={handleGraphChange}>
+                    <select className="solarSelectGraph" value={graphType} onChange={handleGraphChange}>
                         <option value="bar">Bar Graph</option>
                         <option value="line">Line Graph</option>
                     </select>
