@@ -101,12 +101,12 @@ useEffect(() => {
                     </span>
                     </section>   
                 </div>
-                <div id="card">
+                {/* <div id="card">
                         <model-viewer src="./model/container.glb"
                     shadow-intensity="1"
                     camera-controls
                     auto-rotate ar>
-                    <div className="annotation">Fun Fact: These are the first solar panels built on campus!</div>
+                    <div className="annotation">Fun Fact: Water was reused !</div>
                         </model-viewer>
 
                 <section class="attribution">
@@ -122,7 +122,7 @@ useEffect(() => {
                     </span>
                     </section>  
 
-                </div>
+                </div> */}
             </div>
             
             <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.1/model-viewer.min.js"></script>
