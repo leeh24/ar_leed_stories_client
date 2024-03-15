@@ -29,13 +29,17 @@ ChartJS.register(
 )
 
 export default function SolarDetails() {
-    const [solarData, setSolarData] = useState([]);
+    const [solarData, setSolarData] = useState({ consumed: [], generated: [] });
+
     const [distributionData, setDistributionData] = useState([]);
     const [error, setError] = useState(null);
 
     function loadData(useDummyData) {
         if (useDummyData) {
-            const dummyData = [3, 6, 9, 2, 4, 8, 1];
+            const dummyData = {
+                consumed: [3, 5, 9, 3, 5, 6, 7],
+                generated: [2, 4, 5, 2, 3, 4, 7]
+            };
             setSolarData(dummyData);
         } else {
             axios.get(`http://localhost:8080/weeklysolarusage`)
@@ -51,6 +55,7 @@ export default function SolarDetails() {
         }
     }
 
+    
     function loadDistributionData(testData) {
         if (testData) {
             const testData = [1, 2, 3, 4, 5];
@@ -71,7 +76,7 @@ export default function SolarDetails() {
     }
 
     useEffect(() => {
-        loadData(false);
+        loadData(true);
         loadDistributionData(false);
     }, []);
 
@@ -79,17 +84,23 @@ export default function SolarDetails() {
         labels: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
         datasets: [
             {
-                data: solarData,
-                backgroundColor: [
-                    'rgba(75, 0, 130, 0.2)', 
-                ],
-                borderColor: [
-                    'rgba(75, 0, 130, 1)', 
-                ],
+                label: 'Energy Consumed',
+                data: solarData.consumed,
+                backgroundColor: 'rgba(75, 0, 130, 0.2)',
+                borderColor: 'rgba(75, 0, 130, 1)',
                 borderWidth: 1,
             },
+            {
+                label: 'Energy Generated',
+                data: solarData.generated,
+                backgroundColor: 'rgba(233, 217, 70, 0.2)',
+                borderColor: 'rgba(233, 217, 70, 1)',
+                borderWidth: 1,
+            }
         ],
     };
+
+    
 
     const graphConfig = {
         plugins: {
@@ -160,6 +171,26 @@ export default function SolarDetails() {
     }
 
     const renderGraph = () => {
+        const chartData = {
+            labels: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+            datasets: [
+                {
+                    label: 'Energy Consumed',
+                    data: solarData.consumed,
+                    backgroundColor: 'rgba(75, 0, 130, 0.2)',
+                    borderColor: 'rgba(75, 0, 130, 1)',
+                    borderWidth: 1,
+                },
+                {
+                    label: 'Energy Generated',
+                    data: solarData.generated,
+                    backgroundColor: 'rgba(233, 217, 70, 0.2)',
+                    borderColor: 'rgba(233, 217, 70, 1)',
+                    borderWidth: 1,
+                }
+            ],
+        };
+    
         switch (graphType) {
             case "bar":
                 return <Bar data={chartData} options={graphConfig} />;
@@ -224,11 +255,6 @@ export default function SolarDetails() {
                         <option value="weekly">This week</option>
                         <option value="monthly">This month</option>
                         <option value="yearly">This year</option>
-                    </select>
-
-                    <select id="dataType">
-                        <option value="consumed">Energy Consumed</option>
-                        <option value="generated">Energy Generated</option>
                     </select>
 
                     <select value={graphType} onChange={handleGraphChange}>
