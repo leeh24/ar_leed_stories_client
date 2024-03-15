@@ -75,20 +75,14 @@ export default function Header() {
                 <NavLink to="/leed-stories" activeClassName="activeLink" className="navButton">
                     LEED Stories
                 </NavLink>
-                <NavLink to="/electric-details" activeClassName="activeLink" className="navButton">
-                    Electricity
-                </NavLink>
                 <NavLink to="/humidityTemp-details" activeClassName="activeLink" className="navButton">
                     Humidity/Temperature
-                </NavLink>
-                <NavLink to="/water-details" activeClassName="activeLink" className="navButton">
-                    Water
                 </NavLink>
                 <NavLink to="/air-details" activeClassName="activeLink" className="navButton">
                     Air Quality
                 </NavLink>
                 <NavLink to="/solar-details" activeClassName="activeLink" className="navButton">
-                    Solar
+                    Electricity/Solar
                 </NavLink>
             </div>
         </>
