@@ -4,7 +4,11 @@ import Header from "../components/Header";
 import { Line } from 'react-chartjs-2';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend, Title } from 'chart.js';
+import { SliderData } from "./sliderData";
+import ImageSlider2 from "./imageSlider2";
+import buildingPhoto from "../images/ShileyPhotos/IMG_4502.png";
 ChartJS.register(ArcElement, Tooltip, Legend, Title);
+
 
 
 export default function AirQualityDetails() {
@@ -74,7 +78,7 @@ export default function AirQualityDetails() {
             <Header />
             <div className="airquality-container">
              <div className="tempInfo">
-                    <h2 style = {{textAlign:"center"}}>Air Quality Index</h2>
+                    <h2 style = {{textAlign:"center", color: 'white', textShadow: '1px 1px 2px black'}}>Air Quality Index</h2>
               </div>
               <div className="temperature-graph-container">              
                 <div className="humidity-container">
@@ -115,22 +119,28 @@ export default function AirQualityDetails() {
                
                 </div>
                 <div className="text-container">
-                <h2>Interpreting Air Quality Index (AQI)</h2>
-            <p>The Air Quality Index (AQI) measures the quality of the air and its potential impact on health. Here's how to interpret the AQI:</p>
+                <h2 style = {{color: 'white', textShadow: '1px 1px 2px black'}}>Interpreting Air Quality Index (AQI)</h2>
+            <p style={{color: 'white', }}>The Air Quality Index (AQI) measures the quality of the air and its potential impact on health. Here's how to interpret the AQI:</p>
             <ul>
-                <li><span style={{ color: '#008000' }}><strong>0-50:</strong> Good</span> - Air quality is satisfactory, and air pollution poses little or no risk.</li>
-                <li><span style={{ color: '#c1d130' }}><strong>51-100:</strong> Moderate</span> - Air quality is acceptable; however, there may be some health concerns for sensitive individuals.</li>
-                <li><span style={{ color: '#de803e' }}><strong>101-150:</strong> Unhealthy for Sensitive Groups</span> - People with respiratory or heart conditions, children, and the elderly may experience health effects. General public is not likely to be affected.</li>
-                <li><span style={{ color: '#e36e1b' }}><strong>151-200:</strong> Unhealthy </span>- Everyone may begin to experience health effects; sensitive individuals may experience more serious health effects.</li>
-                <li><span style={{ color: '#e3401b' }}><strong>201-300:</strong> Very Unhealthy </span>- Health warnings of emergency conditions. The entire population is more likely to be affected.</li>
-                <li><span style={{ color: '#691a14' }}><strong>301 and above:</strong> Hazardous</span> - Health alert: everyone may experience more serious health effects.</li>
+                <li style={{color: 'white', }}><span style={{ color: '#008000', textShadow: '1px 1px 2px black' }}><strong>0-50:</strong> Good</span> - Air quality is satisfactory, and air pollution poses little or no risk.</li>
+                <li style={{color: 'white', }}><span style={{ color: '#c1d130', textShadow: '1px 1px 2px black' }}><strong>51-100:</strong> Moderate</span> - Air quality is acceptable; however, there may be some health concerns for sensitive individuals.</li>
+                <li style={{color: 'white', }}><span style={{ color: '#de803e', textShadow: '1px 1px 2px black' }}><strong>101-150:</strong> Unhealthy for Sensitive Groups</span> - People with respiratory or heart conditions, children, and the elderly may experience health effects. General public is not likely to be affected.</li>
+                <li style={{color: 'white', }}><span style={{ color: '#e36e1b', textShadow: '1px 1px 2px black' }}><strong>151-200:</strong> Unhealthy </span>- Everyone may begin to experience health effects; sensitive individuals may experience more serious health effects.</li>
+                <li style={{color: 'white', }}><span style={{ color: '#e3401b', textShadow: '1px 1px 2px black' }}><strong>201-300:</strong> Very Unhealthy </span>- Health warnings of emergency conditions. The entire population is more likely to be affected.</li>
+                <li style={{color: 'white', }}><span style={{ color: '#691a14',  textShadow: '1px 1px 2px black' }}><strong>301 and above:</strong> Hazardous</span> - Health alert: everyone may experience more serious health effects.</li>
             </ul>
-            <p>Lower AQI values indicate better air quality, while higher values indicate poorer air quality and increased health risks.</p>
+            <p style={{color: 'white',textShadow: '1px 1px 2px black' }}> <strong>Lower AQI values indicate better air quality, while higher values indicate poorer air quality and increased health risks.</strong></p>
         
         
   </div>
              
               </div>
+            </div>
+            <div className="home">
+            <div className="homeVideoContainer" >
+                    <ImageSlider2 slides={SliderData} style={{ filter: 'blur(30px)'}} />
+                </div>
+                <img className="homePhoto" src={buildingPhoto} alt="Building" />
             </div>
         </>
     );

@@ -19,7 +19,7 @@ const ImageSlider2 = ({ slides }) => {
     return (
         <>
             {SliderData.map((slide, index) => {
-                return <img src = {slide.image} alt = 'Shiley Photo' style={{ filter: 'blur(7px)'}} className={`Homeimage ${index === current ? 'fade-in' : 'fade-out'}`} />;
+                return <img src = {slide.image} alt = 'Shiley Photo' style={{ filter: 'blur(6px)'}} className={`Homeimage ${index === current ? 'fade-in' : 'fade-out'}`} />;
             })}
         </>
     );

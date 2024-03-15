@@ -617,7 +617,7 @@ App-link {
 /* TemperatureHumidity.css */
 
 .temperature-humidity-container {
-    background-color: #DD4814;
+    /* background-color: #DD4814; */
     border-radius: 10px;
     padding: 20px;
     text-align: center;
@@ -626,7 +626,7 @@ App-link {
 }
 
 .airquality-container {
-    background-color: #0098C3;
+    /* background-color: #0098C3; */
     border-radius: 10px;
     padding: 20px;
     text-align: center;

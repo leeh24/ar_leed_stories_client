@@ -6,6 +6,9 @@ import { Line } from 'react-chartjs-2';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend, Title } from 'chart.js';
 import Switch from '@mui/material/Switch';
+import { SliderData } from "./sliderData";
+import ImageSlider2 from "./imageSlider2";
+import buildingPhoto from "../images/ShileyPhotos/IMG_4502.png";
 
 ChartJS.register(ArcElement, Tooltip, Legend, Title);
 
@@ -126,7 +129,7 @@ export default function HumidityTempDetails() {
             <div className="temperature-humidity-container">
 
               <div className="tempInfo">
-                    <h2 style = {{textAlign:"center"}}>Temperature and Humidity</h2>
+                    <h2 style = {{textAlign:"center", color: 'white', textShadow: '1px 1px 2px black'}}>Temperature and Humidity</h2>
               </div>
               <div className="temperature-graph-container">              
                 <div className="temperature-container">
@@ -187,6 +190,12 @@ export default function HumidityTempDetails() {
               </div>
 
             <img class="displayplans" src={plans}></img>
+            </div>
+            <div className="home">
+            <div className="homeVideoContainer" >
+                    <ImageSlider2 slides={SliderData} style={{ filter: 'blur(30px)'}} />
+                </div>
+                <img className="homePhoto" src={buildingPhoto} alt="Building" />
             </div>
         </>
     );

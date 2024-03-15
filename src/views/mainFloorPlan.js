@@ -32,13 +32,16 @@ const MainFloorPlan = () => {
     return (
         <>
             <Header />
+            
             <div className='floorPlanHome'>
                 
                 {/* Render the selected floor plan */}
                 <div className="floor-plan-container" style={{ transition: 'opacity 0.5s', opacity: 1 }}>
+                <h1 style={{ textAlign: "center", color: 'white', textShadow: '1px 1px 2px black' }}>Consumption of Electricity and Solar Energy</h1>
                     {renderFloorPlan()}
      
                 </div>
+                
                 {/* Buttons positioned on the right side */}
                 <div style={{ position: 'absolute', top: '30%', right: '20px', textAlign: 'center' }}>
                     {/* Buttons stacked vertically */}

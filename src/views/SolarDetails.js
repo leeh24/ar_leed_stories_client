@@ -14,7 +14,9 @@ import {
     Tooltip,
     Legend
 } from "chart.js";
-
+import { SliderData } from "./sliderData";
+import ImageSlider2 from "./imageSlider2";
+import buildingPhoto from "../images/ShileyPhotos/IMG_4502.png";
 ChartJS.register(
     BarElement,
     LineElement,
@@ -92,7 +94,22 @@ export default function SolarDetails() {
     const graphConfig = {
         plugins: {
             legend: {
-                display: false,
+                display: true,
+                labels: {
+                    color: 'white', // Set color to white
+                }
+            }
+        },
+        scales: {
+            y: {
+                ticks: {
+                    color: 'white', // Set color to white
+                }
+            },
+            x: {
+                ticks: {
+                    color: 'white', // Set color to white
+                }
             }
         }
     };
@@ -123,11 +140,17 @@ export default function SolarDetails() {
         ],
     }
 
-    // const doughnutConfig = {
-    //     plugins: {
-    //         cutout: '45%',
-    //     }
-    // };
+   const doughnutConfig = {
+    plugins: {
+        legend: {
+            display: true,
+            labels: {
+                color: 'white', // Set color to white
+            }
+        }
+    },
+    // other configurations...
+};
 
     const [graphType, setGraphType] = useState('bar'); // initial graph
 
@@ -151,13 +174,13 @@ export default function SolarDetails() {
     const [chartType, setChartType] = useState('doughnut'); // initial chart
 
     const renderChart = () => {
-        return <Doughnut data={doughnutData} backgroundColor={'rgba(255, 0, 0, 0.2)'} />;
+        return <Doughnut data={doughnutData} options={doughnutConfig} backgroundColor={'rgba(255, 0, 0, 0.2)'} />;
     }
 
     return (
         <>
             <Header />
-            <body /* style={{ backgroundImage: `url(${bgImage})`, backgroundRepeat: "no-repeat", backgroundSize: "cover", opacity:1}} */>
+            <body style={{ color: 'white', textShadow: '1px 1px 2px black', backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundColor: "rgba(255, 255, 255, 0)" }}>
                 <h1 style={{ textAlign: "center", color: "#7752b4" }}>Consumption of Electricity and Solar Energy</h1>
 
                 <br></br>
@@ -222,7 +245,14 @@ export default function SolarDetails() {
                     {renderChart()}  
                 </div> 
                 
+                
             </body>
+            <div className="home">
+            <div className="homeVideoContainer" >
+                    <ImageSlider2 slides={SliderData} style={{ filter: 'blur(30px)'}} />
+                </div>
+                <img className="homePhoto" src={buildingPhoto} alt="Building" />
+            </div>
         </>
     );
 }
