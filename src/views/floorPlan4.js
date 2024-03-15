@@ -7,7 +7,8 @@ import floor4Photo from "../images/floorPhotos/FLOOR4_FINISHED.png";
 const FloorPlan4 = () => {
   const [roomData, setRoomData] = useState({
     SH452: { temperature: [61, 86, 70, 77, 81, 62, 65, 83, 69, 75, 88, 72] , currentIndex: 0, coordinates: { x: 18.5, y: 41.9, width: 15, height: 17.6 }, clipPath: 'polygon(0 0, 7% 100%, 68% 100%, 66% 100%, 66% 72%, 72% 72%, 72% 28%, 100% 28%, 100% 0' },
-    SH453: { temperature: [89, 64, 66, 61, 82, 78, 87, 70, 79, 83, 85, 69], currentIndex: 0, coordinates: { x: 49.4, y: 60.5, width: 15, height: 13.4 }, clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)'}
+    SH453: { temperature: [89, 64, 66, 61, 82, 78, 87, 70, 79, 83, 85, 69], currentIndex: 0, coordinates: { x: 49.4, y: 60.5, width: 15, height: 13.4 }, clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)'},
+    SH454: { temperature: [89, 64, 66, 61, 82, 78, 87, 70, 79, 83, 85, 69], currentIndex: 0, coordinates: { x: 29.4, y: 46.9, width: 6.3, height: 7.7 }, clipPath: 'polygon(0 0, 100% 0, 100% 46%, 86% 46%, 86% 100%, 0 100%)'},
   });
 
   const [selectedRoom, setSelectedRoom] = useState(null);
