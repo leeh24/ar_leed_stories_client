@@ -19,7 +19,7 @@ const Legend = () => {
                     <span style={{ color: 'white', textShadow: '1px 1px 2px black' }}>≤ 65°F</span>
                 </li>
                 <li>
-                    <span className="legend-color" style={{ backgroundColor: 'rgba(153, 255, 153, 0.7)', width: '30px', height: '20px', display: 'inline-block', marginRight: '5px' }}></span>
+                    <span className="legend-color" style={{ backgroundColor: 'rgba(188, 255, 188, 0.7)', width: '30px', height: '20px', display: 'inline-block', marginRight: '5px' }}></span>
                     <span style={{ color: 'white', textShadow: '1px 1px 2px black' }}>≤ 73°F</span>
                 </li>
                 <li>

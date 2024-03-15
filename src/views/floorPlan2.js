@@ -102,7 +102,7 @@ const FloorPlan2 = () => {
         backgroundColor = 'rgba(102, 244, 204, 0.7)'; // Very light green almost blue like teal with 0.7 transparency
       }
       else if (temperature <= 73) {
-          backgroundColor = 'rgba(153, 255, 153, 0.7)'; // Lightish green with 0.7 transparency
+          backgroundColor = 'rgba(188, 255, 188, 0.7)'; // Lightish green with 0.7 transparency
       } else if (temperature <= 76) {
           backgroundColor = 'rgba(170, 255, 170, 0.7)'; // Light green with 0.7 transparency
       } else if (temperature <= 79) {
@@ -125,7 +125,7 @@ const FloorPlan2 = () => {
 
   const getTemperatureFontSize = () => {
     // Define a base font size
-    const baseFontSize = 15; // in pixels
+    const baseFontSize = 20; // in pixels
     // Calculate the percentage of the floorplan width to the window width
     const widthPercentage = (imageDimensions.width / window.innerWidth) * 100;
     // Calculate the font size as a percentage of the base font size

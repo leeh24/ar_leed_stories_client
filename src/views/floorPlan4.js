@@ -116,7 +116,7 @@ const FloorPlan4 = () => {
 
   const getTemperatureFontSize = () => {
     // Define a base font size
-    const baseFontSize = 13; // in pixels
+    const baseFontSize = 20; // in pixels
     // Calculate the percentage of the floorplan width to the window width
     const widthPercentage = (imageDimensions.width / window.innerWidth) * 100;
     // Calculate the font size as a percentage of the base font size

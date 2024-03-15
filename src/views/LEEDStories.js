@@ -69,7 +69,7 @@ useEffect(() => {
                         <h1>Solar Panels</h1>
                         <button ref={(el) => buttonRefs.current[1] = el} type="button" className="collapsible" onClick={() => toggleOpen(1)}>{isOpen[1] ? 'Collapse Text' : 'Expand for more info'}</button>
                         <div ref={(el) => contentRefs.current[1] = el} className={`content ${isOpen[1] ? 'open' : ''}`}>
-                        <p><strong>Reduction in Energy Use and Carbon Emission</strong>s - 80% less energy demand and 509 tons fewer CO2 operational emissions each year than an average similar building in the US.</p>
+                        <p><strong>Reduction in Energy Use and Carbon Emissions</strong> - 80% less energy demand and 509 tons fewer CO2 operational emissions each year than an average similar building in the US.</p>
                         <ol>
                         <li data-list="ordered">1. 43.6kW solar panel array provide (first solar panels on campus!) will provide ~24% of the building's electrical supply over a year, and 15% of the total energy including gas.</li>
                         <li data-list="ordered">2. Efficient mechanical systems including a radiant hydronic floor delivering heating and cooling. Radiant systems are also more comfortable &nbsp;and healthier for the occupants than one that uses forced-air.</li>
@@ -92,7 +92,7 @@ useEffect(() => {
                     <span>
                         <h1>Carbon Emission</h1>
                         <button ref={(el) => buttonRefs.current[2] = el} type="button" className="collapsible" onClick={() => toggleOpen(2)}>{isOpen[2] ? 'Collapse Text' : 'Expand for more info'}</button>                        <div ref={(el) => contentRefs.current[2] = el} className={`content ${isOpen[2] ? 'open' : ''}`}>
-                        <p><strong> Reduction in Embodied Carbon* (*</strong>the greenhouse gas emissions generated from the manufacturing, transportation, installation, maintenance, and disposal of building materials).</p>
+                        <p><strong> Reduction in Embodied Carbon* </strong>(*the greenhouse gas emissions generated from the manufacturing, transportation, installation, maintenance, and disposal of building materials).</p>
                         <ol>
                         <li data-list="ordered">1.Through the strategic reuse of the concrete foundation, retaining walls and concrete structural elements of the existing building, University of Portland achieved a 42% reduction in embodied carbon emissions compared to if the Innovation Center had been completely New Construction. The amount of materials being used for construction was reduced tremendously. The cement in concrete is responsible for 8% of planet-warming CO2 emissions globally.</li>
                         <li data-list="ordered">2.Cross-laminated timber structural roof panels are a regional material, made from trees grown in local forests. Trees sequester CO2 from the atmosphere as they grow, which means the embodied carbon of products made from timber is significantly lower than those made from cement.</li>
@@ -100,6 +100,28 @@ useEffect(() => {
                         </div>
                     </span>
                     </section>   
+                </div>
+                <div id="card">
+                        <model-viewer src="./model/container.glb"
+                    shadow-intensity="1"
+                    camera-controls
+                    auto-rotate ar>
+                    <div className="annotation">Fun Fact: These are the first solar panels built on campus!</div>
+                        </model-viewer>
+
+                <section class="attribution">
+                    <span>
+                        <h1>Water Usage</h1>
+                        <button ref={(el) => buttonRefs.current[3] = el} type="button" className="collapsible" onClick={() => toggleOpen(3)}>{isOpen[3] ? 'Collapse Text' : 'Expand for more info'}</button>
+                        <div ref={(el) => contentRefs.current[3] = el} className={`content ${isOpen[3] ? 'open' : ''}`}>
+                        <p><strong>Reusing water</strong></p>
+                        <ol>
+                        <li data-list="ordered">1. 35,707 sq. ft. of the previously disturbed site will be restored with native and adaptive drought-tolerant plants, providing habitat and promoting bio-diversity.</li>
+                        </ol>
+                        </div>
+                    </span>
+                    </section>  
+
                 </div>
             </div>
             
