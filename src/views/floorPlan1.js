@@ -1,19 +1,64 @@
 import React, { useState, useEffect, useRef } from 'react';
 import floor1Photo from "../images/floorPhotos/FLOOR1_FINISHED.png";
-
-
+import axios from 'axios';
 
 
 const FloorPlan1 = () => {
   const [roomData, setRoomData] = useState({
-    SH152: { temperature: [83, 71, 77, 63, 75, 82, 67, 80, 66, 64, 89, 69] , currentIndex: 0, coordinates: { x: 12.05, y: 27.35, width: 11.9, height: 40.9 }, clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)' },
-    SH153: { temperature: [70, 78, 66, 85, 68, 61, 76, 87, 73, 62, 89, 81], currentIndex: 0, coordinates: { x: 24.25, y: 27.35, width: 12.41, height: 40.9 }, clipPath: 'polygon(0% 0%, 100% 0%, 100% 80%, 34% 80%, 34% 100%, 0% 100%)' },
-    SH154: { temperature: [86, 82, 72, 69, 63, 67, 74, 80, 88, 64, 77, 90], currentIndex: 0, coordinates: { x: 37, y: 27.35, width: 10, height: 8.7 }, clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%))' },
-    SH155: { temperature: [74, 83, 68, 79, 61, 65, 87, 81, 70, 89, 62, 84], currentIndex: 0, coordinates: { x: 53.4, y: 27.35, width: 10.9, height: 32.7 }, clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%))' },
-    SH156: { temperature: [78, 76, 88, 63, 82, 71, 69, 85, 67, 80, 62, 89], currentIndex: 0, coordinates: { x: 65, y: 27.35, width: 23.4, height: 32.7 }, clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%))' },
-    SH157: { temperature: [66, 80, 85, 63, 70, 82, 88, 61, 73, 78, 89, 67], currentIndex: 0, coordinates: { x: 28.65, y: 60.2, width: 12, height: 8.1 }, clipPath: 'polygon(67% 10%, 100% 9%, 100% 67%, 100% 100%, 0 100%, 0 0, 67% 0)'},
-    SH158: { temperature: [81, 77, 86, 68, 90, 71, 83, 65, 79, 64, 62, 84], currentIndex: 0, coordinates: { x: 47.2, y: 60.4, width: 6, height: 13.1}, clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)'}
+    SH152: { currentIndex: 0, coordinates: { x: 12.05, y: 27.35, width: 11.9, height: 40.9 }, clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)' },
+    SH153: { currentIndex: 0, coordinates: { x: 24.25, y: 27.35, width: 12.41, height: 40.9 }, clipPath: 'polygon(0% 0%, 100% 0%, 100% 80%, 34% 80%, 34% 100%, 0% 100%)' },
+    SH154: { currentIndex: 0, coordinates: { x: 37, y: 27.35, width: 10, height: 8.7 }, clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%))' },
+    SH155: { currentIndex: 0, coordinates: { x: 53.4, y: 27.35, width: 10.9, height: 32.7 }, clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%))' },
+    SH156: { currentIndex: 0, coordinates: { x: 65, y: 27.35, width: 23.4, height: 32.7 }, clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%))' },
+    SH157: { currentIndex: 0, coordinates: { x: 28.65, y: 60.2, width: 12, height: 8.1 }, clipPath: 'polygon(67% 10%, 100% 9%, 100% 67%, 100% 100%, 0 100%, 0 0, 67% 0)'},
+    SH158: { currentIndex: 0, coordinates: { x: 47.2, y: 60.4, width: 6, height: 13.1}, clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)'}
   });
+
+  const [roomTempData, setRoomTempData] = useState({
+    SH152: { temperature: [83, 71, 77, 63, 75, 82, 67, 80, 66, 64, 89, 69]},
+    SH153: { temperature: [70, 78, 66, 85, 68, 61, 76, 87, 73, 62, 89, 81]},
+    SH154: { temperature: [86, 82, 72, 69, 63, 67, 74, 80, 88, 64, 77, 90]},
+    SH155: { temperature: [74, 83, 68, 79, 61, 65, 87, 81, 70, 89, 62, 84]},
+    SH156: { temperature: [78, 76, 88, 63, 82, 71, 69, 85, 67, 80, 62, 89]},
+    SH157: { temperature: [66, 80, 85, 63, 70, 82, 88, 61, 73, 78, 89, 67]},
+    SH158: { temperature: [81, 77, 86, 68, 90, 71, 83, 65, 79, 64, 62, 84]}
+  });
+
+  const [error, setError] = useState(null);
+  
+  useEffect(() => {
+    loadRoomTemperatureDataOverDay(false);
+    
+      
+  }, []);
+
+  function loadRoomTemperatureDataOverDay(useDummyData) {
+    if (useDummyData) {
+        var dummyData = {
+          SH152: { temperature: [83, 71, 77, 63, 75, 82, 67, 80, 66, 64, 89, 69]},
+          SH153: { temperature: [70, 78, 66, 85, 68, 61, 76, 87, 73, 62, 89, 81]},
+          SH154: { temperature: [86, 82, 72, 69, 63, 67, 74, 80, 88, 64, 77, 90]},
+          SH155: { temperature: [74, 83, 68, 79, 61, 65, 87, 81, 70, 89, 62, 84]},
+          SH156: { temperature: [78, 76, 88, 63, 82, 71, 69, 85, 67, 80, 62, 89]},
+          SH157: { temperature: [66, 80, 85, 63, 70, 82, 88, 61, 73, 78, 89, 67]},
+          SH158: { temperature: [81, 77, 86, 68, 90, 71, 83, 65, 79, 64, 62, 84]}
+        };
+        console.log(dummyData);
+        setRoomTempData(dummyData);
+    } else {
+        const url = "http://localhost:8080/floorTemperature/1";
+        axios.get(url)
+          .then (res => {
+              console.log(res.data);
+              setRoomTempData(res.data);
+              setError(null);
+          })
+          .catch((err) => {
+              console.log(err);
+              setError(err);
+        });
+    }
+  }
 
   const [selectedRoom, setSelectedRoom] = useState(null);
   const [imageDimensions, setImageDimensions] = useState({ width: 0, height: 0 });
@@ -64,7 +109,7 @@ const FloorPlan1 = () => {
   }, []);
 
   const updateTemperature = () => {
-    setRoomData(prevRoomData => {
+    setRoomTempData(prevRoomData => {
       const updatedRoomData = { ...prevRoomData };
       Object.keys(updatedRoomData).forEach(room => {
         const roomInfo = updatedRoomData[room];
@@ -81,7 +126,7 @@ const FloorPlan1 = () => {
   };
 
   const getRoomColor = (roomNumber, temperatureIndex) => {
-    const room = roomData[roomNumber];
+    const room = roomTempData[roomNumber];
     const temperature = room.temperature[temperatureIndex];
   
     let backgroundColor;
@@ -185,7 +230,7 @@ const FloorPlan1 = () => {
       {selectedRoom && (
         <div className="popup">
           <h2>Room {selectedRoom}</h2>
-          <p>Temperature: {roomData[selectedRoom].temperature[roomData[selectedRoom].currentIndex]}°F</p>
+          <p>Temperature: {roomTempData[selectedRoom].temperature[roomData[selectedRoom].currentIndex]}°F</p>
           <button onClick={() => setSelectedRoom(null)}>Close</button>
         </div>
       )}
