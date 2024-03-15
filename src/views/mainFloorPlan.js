@@ -37,7 +37,7 @@ const MainFloorPlan = () => {
                 
                 {/* Render the selected floor plan */}
                 <div className="floor-plan-container" style={{ transition: 'opacity 0.5s', opacity: 1 }}>
-                <h1 style={{ textAlign: "center", color: 'white', textShadow: '1px 1px 2px black' }}>Consumption of Electricity and Solar Energy</h1>
+                <h1 style={{ textAlign: "center", color: 'white', textShadow: '1px 1px 2px black' }}>Room Temperatures</h1>
                     {renderFloorPlan()}
      
                 </div>
