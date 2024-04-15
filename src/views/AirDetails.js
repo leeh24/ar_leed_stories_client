@@ -78,7 +78,7 @@ export default function AirQualityDetails() {
             <Header />
             <div className="airquality-container">
              <div className="tempInfo">
-                    <h2 style = {{textAlign:"center", color: 'white', textShadow: '1px 1px 2px black'}}>Air Quality Index</h2>
+                    <h2 style = {{textAlign:"center", color: 'white', textShadow: '1px 1px 2px black'}}>Outdoor Air Quality Index</h2>
               </div>
               <div className="temperature-graph-container">              
                 <div className="humidity-container">
@@ -118,8 +118,8 @@ export default function AirQualityDetails() {
                   </div>
                
                 </div>
-                <div className="text-container">
-                <h2 style = {{color: 'white', textShadow: '1px 1px 2px black'}}>Interpreting Air Quality Index (AQI)</h2>
+                <div className="text-container" style={{backgroundColor: 'rgb(232,232,255,0.3)', padding: '20px', borderRadius: '10px'}}>
+                <h2 style={{color: 'black', textShadow: '1px 1px 2px black'}}>Interpreting Air Quality Index (AQI)</h2>
             <p style={{color: 'white', }}>The Air Quality Index (AQI) measures the quality of the air and its potential impact on health. Here's how to interpret the AQI:</p>
             <ul>
                 <li style={{color: 'white', }}><span style={{ color: '#008000', textShadow: '1px 1px 2px black' }}><strong>0-50:</strong> Good</span> - Air quality is satisfactory, and air pollution poses little or no risk.</li>

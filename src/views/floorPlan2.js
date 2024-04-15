@@ -146,25 +146,21 @@ const FloorPlan2 = () => {
     } 
     else {
       temperatureText = `${temperature}°F`;
-      if (temperature <= 45) {
-          backgroundColor = 'rgba(51, 153, 255, 0.7)'; // Light Blue with 0.7 transparency
-      } else if (temperature <= 62) {
-          backgroundColor = 'rgba(102, 180, 204, 0.7)'; // Very light green almost blue like teal with 0.7 transparency
-      } else if (temperature <= 65) {
-        backgroundColor = 'rgba(102, 244, 204, 0.7)'; // Very light green almost blue like teal with 0.7 transparency
+      if (temperature <= 64) {
+          backgroundColor = 'rgba(193, 214, 237, 1)'; // Light Blue with 0.7 transparency
+      } else if (temperature <= 66) {
+          backgroundColor = 'rgba(146, 184, 225, 1)'; // Very light green almost blue like teal with 0.7 transparency
+      } else if (temperature <= 68) {
+        backgroundColor = 'rgba(107, 156, 204, 1)'; // Very light green almost blue like teal with 0.7 transparency
       }
-      else if (temperature <= 73) {
-          backgroundColor = 'rgba(188, 255, 188, 0.7)'; // Lightish green with 0.7 transparency
+      else if (temperature <= 74) {
+          backgroundColor = 'rgba(102, 204, 102,1)'; // Lightish green with 0.7 transparency
       } else if (temperature <= 76) {
-          backgroundColor = 'rgba(170, 255, 170, 0.7)'; // Light green with 0.7 transparency
-      } else if (temperature <= 79) {
-          backgroundColor = 'rgba(153, 204, 153, 0.7)'; // Darker green not too dark with 0.7 transparency
-      } else if (temperature <= 83) {
-          backgroundColor = 'rgba(102, 204, 102, 0.7)'; // Darker green with 0.7 transparency
-      } else if (temperature <= 85) {
-          backgroundColor = 'rgba(255, 204, 153, 0.7)'; // Very light orange with 0.7 transparency
+          backgroundColor = 'rgba(255, 178, 44, 1)'; // Light green with 0.7 transparency
+      } else if (temperature <= 78) {
+          backgroundColor = 'rgba(252, 102, 32, 1)'; // Darker green not too dark with 0.7 transparency
       } else {
-          backgroundColor = 'rgba(255, 204, 102, 0.7)'; // Light orange with 0.7 transparency
+          backgroundColor = 'rgba(255, 58, 32, 1)'; // Light orange with 0.7 transparency
       }
     }
   
@@ -187,13 +183,15 @@ const FloorPlan2 = () => {
   
   const overlayTextStyleRoom = {
     position: 'absolute',
-    top: '45%',
+    top: '35%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
     textAlign: 'center',
     fontWeight: 'bold',
     color: 'white',
+    fontSize: getTemperatureFontSize() * 0.7, // Dynamically calculate font size
     textShadow: '1px 1px 2px black', // Add stroke to room text
+    whiteSpace: 'nowrap' // Prevent text from wrapping onto multiple lines
   };
   
   const overlayTextStyleTemp = {
@@ -230,10 +228,29 @@ const FloorPlan2 = () => {
             }}
             onClick={() => handleAreaClick(room)} // Add back the click handler here
           >
-            <div style={overlayTextStyleRoom}>Room: {room}</div>
+            <div style={overlayTextStyleRoom}>Room {room}</div>
             <div style={overlayTextStyleTemp}>{getRoomColor(room, data.currentIndex).temperatureText}</div>
           </div>
         ))}
+        <div //empty rooms
+            key="blank"
+            className="room-overlay"
+            style={{
+                position: 'absolute',
+                left: `${(39 / 100) * imageDimensions.width}px`,
+                top: `${(13.9 / 100) * imageDimensions.width}px`,
+                width: `${(11 / 100) * imageDimensions.width}px`,
+                height: `${(42 / 100) * imageDimensions.height}px`,
+                backgroundColor: 'rgb(255, 255, 255, 0.5)', // Correct color format
+                clipPath: 'polygon(0 0, 0 41%, 23% 41%, 23% 100%, 66% 100%, 66% 88%, 100% 88%, 100% 0)',
+                border: '2px solid black', // Add border to the overlay
+            }}
+        >
+
+
+
+          
+        </div>
         </div>
       </div>
       {selectedRoom && (

@@ -41,12 +41,12 @@ export default function Header() {
                                 </NavLink>
                             </span></li>
                             <li><span>
-                                <NavLink to="/humidityTemp-details" activeClassName="activeLink" className="navButton" onMouseEnter={toggleDropdown} onMouseLeave={toggleDropdown}>
+                                <NavLink to="/floor" activeClassName="activeLink" className="navButton" onMouseEnter={toggleDropdown} onMouseLeave={toggleDropdown}>
                                     Humidity/Temperature
                                     {isDropdownOpen && (
                                         <div className="dropdown-menu">
-                                            <NavLink to="/humidityTemp-details" activeClassName="activeLink" className="dropdown-item">Graph View</NavLink>
                                             <NavLink to="/floor" activeClassName="activeLink" className="dropdown-item">Floorplan View</NavLink>
+                                            <NavLink to="/humidityTemp-details" activeClassName="activeLink" className="dropdown-item">Graph View</NavLink>
                                         </div>
                                     )}
                                 </NavLink>

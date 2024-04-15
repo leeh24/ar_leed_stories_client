@@ -29,7 +29,8 @@ export default function HomePage() {
                     </div>  
                     <div class="bottom-container">
                     <div class="containerText">
-    The Shiley Marcos Center is a state-of-the-art building designed with sustainability and innovation at its core. It features a variety of energy-saving systems, including an advanced HVAC system, solar panels, and radiant slab systems, contributing to its LEED certification.
+    The Shiley Marcos Center is a state-of-the-art building designed with sustainability and innovation at its core. It features a variety of energy-saving systems, including an advanced HVAC system, solar panels, and radiant slab systems, contributing to its certification goal of LEED goal. LEED
+     or the Leadership in Energy and Environmental Design is world's most widely used sustainability rating.
 
     But this center is more than just a "green" building. It's a hub for innovation, equipped with maker spaces, computer labs, classrooms, and study areas. These spaces are designed to foster creativity, collaboration, and learning, making the Shiley Marcos Center a leading destination for forward-thinking education.
 </div>
