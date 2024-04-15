@@ -17,7 +17,6 @@ div {
     background-color: rgba(255, 255, 255, 0);
     width: 100vw;
     object-fit: cover;
-    
 }
 
 .App {
@@ -29,7 +28,8 @@ div {
     margin-bottom: 2px;
     display: flex;
 }
-.Homeimage{
+
+.Homeimage {
     width: 100vw;
     height: 100vh;
     border-radius: 10px;
@@ -44,6 +44,7 @@ div {
     opacity: 0.9;
     transition: opacity 1.5s ease-in-out;
 }
+
 .fade-in {
     opacity: 1;
 }
@@ -51,8 +52,9 @@ div {
 .fade-out {
     opacity: 0;
 }
+
 .right-arrow {
-    position:absolute;
+    position: absolute;
     top: 50%;
     right: 32px;
     font-size: 3rem;
@@ -61,8 +63,9 @@ div {
     cursor: pointer;
     user-select: none;
 }
+
 .left-arrow {
-    position:absolute;
+    position: absolute;
     top: 50%;
     left: 32px;
     font-size: 3rem;
@@ -71,6 +74,7 @@ div {
     cursor: pointer;
     user-select: none;
 }
+
 .scroll-icon {
     position: absolute;
     top: 80%;
@@ -396,39 +400,35 @@ App-link {
 
 .room-overlay {
     transition: background-color 1s ease;
-  }
-  
-  .blue {
-    background-color: rgba(0, 0, 255, 0.7);
-  }
-  
-  .green {
-    background-color: rgba(0, 255, 0, 0.7);
-  }
-  
-  .red {
-    background-color: rgba(255, 0, 0, 0.7);
-  }
-  
-  .default {
-    background-color: rgba(255, 255, 255, 0.7);
-  }
+}
 
+.blue {
+    background-color: rgba(0, 0, 255, 0.7);
+}
+
+.green {
+    background-color: rgba(0, 255, 0, 0.7);
+}
+
+.red {
+    background-color: rgba(255, 0, 0, 0.7);
+}
+
+.default {
+    background-color: rgba(255, 255, 255, 0.7);
+}
 
 .app {
     text-align: center;
-  }
+}
 
-  .dropdown-menu {
+.dropdown-menu {
     display: none;
 }
 
 .navButton:hover .dropdown-menu {
     display: block;
 }
-
-
-
 
 .floorPlanHome {
     position: relative;
@@ -441,8 +441,7 @@ App-link {
     text-align: center;
 }
 
-
-  .floor-plan-container {
+.floor-plan-container {
     top: 5%;
     opacity: 1;
     transition: opacity 0.2s ease-in-out;
@@ -456,32 +455,37 @@ App-link {
     opacity: 1;
 }
 
+
 /* Styling the map */
 
-  
-  /* Overlay style */
 
-  .room-overlay {
+/* Overlay style */
+
+.room-overlay {
     position: absolute;
     transition: transform 0.3s ease-in-out;
-  }
-  .floorplan-container {
-    max-width: 90%; /* Adjust the width as needed */
-    margin: 0 auto; /* Center the container horizontally */
-    position: absolute; /* Required for absolute positioning of overlay */
-    width: 100%; /* Ensure the container takes the full width */
-  }
-  
-  .overlay {
+}
+
+.floorplan-container {
+    max-width: 90%;
+    /* Adjust the width as needed */
+    margin: 0 auto;
+    /* Center the container horizontally */
+    position: absolute;
+    /* Required for absolute positioning of overlay */
+    width: 100%;
+    /* Ensure the container takes the full width */
+}
+
+.overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-   
-  }
-  
-  .room-overlay div {
+}
+
+.room-overlay div {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -489,31 +493,32 @@ App-link {
     font-weight: bold;
     color: white;
     text-align: center;
-  }
-  .room-overlay:hover {
-    transform: scale(1.02); /* Add this */
-  }
-  
-  .floorplan-image {
+}
+
+.room-overlay:hover {
+    transform: scale(1.02);
+    /* Add this */
+}
+
+.floorplan-image {
     max-width: 100vw;
     height: auto;
-  }
-  
+}
 
-  .floorplan-overlay {
+.floorplan-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-  }
-  
-  .room {
+}
+
+.room {
     position: absolute;
     /* Add your styling for room position, size, etc. */
-  }
-  
-  .popup {
+}
+
+.popup {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -521,10 +526,8 @@ App-link {
     padding: 20px;
     background-color: white;
     border: 1px solid black;
-  }
-  
-  
-  
+}
+
 
 /* airDetails.css */
 
@@ -642,22 +645,20 @@ App-link {
     margin: 0 auto;
 }
 
-
-
-
 .temperature-humidity-container h1 {
     font-size: 24px;
     color: #333;
     display: flex;
-    justify-content: space-between; /* Add this */
+    justify-content: space-between;
+    /* Add this */
 }
 
 .text-container {
-    flex: 1; /* This will make the text and the graph take up equal amounts of space */
-    padding-right: 20px; /* This will add some space between the text and the graph */
+    flex: 1;
+    /* This will make the text and the graph take up equal amounts of space */
+    padding-right: 20px;
+    /* This will add some space between the text and the graph */
 }
-
-
 
 .tempInfo {
     text-align: center;
@@ -671,14 +672,12 @@ App-link {
     align-items: center;
 }
 
-
 .temperature-container {
-    background-color: #fff2cc;
+    background-color: #f1e3bb;
     border-radius: 5px;
     padding: 10px;
     margin: 20px;
-    width: 50%;
-
+    width: 45%;
 }
 
 .temperature {
@@ -686,7 +685,7 @@ App-link {
     width: 200px;
     display: block;
     margin: auto;
-    text-align: center;    
+    text-align: center;
 }
 
 .temperature p {
@@ -701,12 +700,11 @@ App-link {
 }
 
 .humidity-container {
-    background-color: #87ceeb;
+    background-color: #0098c3;
     border-radius: 5px;
     padding: 10px;
     margin: 20px;
-    width: 50%;
-
+    width: 45%;
 }
 
 .humidity {
@@ -714,36 +712,38 @@ App-link {
     width: 100%;
     display: block;
     margin: auto;
-    text-align: center;    
+    text-align: center;
 }
 
 .humidity p {
     font-size: 32px;
     color: #555;
 }
+
 .humidity-graph {
     padding: 10px;
     margin: auto;
     width: 70%;
-
 }
-
-
 
 .airQuality {
     height: 100px;
     width: 100%;
     display: block;
     margin: auto;
-    text-align: center;    
-    flex: 1; /* Add this */
-    margin-right: 20px; /* Add this */
+    text-align: center;
+    flex: 1;
+    /* Add this */
+    margin-right: 20px;
+    /* Add this */
 }
+
 .airQuality-graph {
     padding: 10px;
     margin: auto;
     width: 70%;
-    flex: 2; /* Add this */
+    flex: 2;
+    /* Add this */
 }
 
 header {
@@ -751,37 +751,45 @@ header {
     height: 100px;
     border-bottom: solid 1px rgba(16, 16, 16, 0.1);
     font-family: 'Poppins';
-    display: flex; /* Add this */
-    justify-content: space-between; /* Add this */
-    align-items: center; /* Add this */
-    padding: 2vw; /* Add some padding to the sides of the header */
+    display: flex;
+    /* Add this */
+    justify-content: space-between;
+    /* Add this */
+    align-items: center;
+    /* Add this */
+    padding: 2vw;
+    /* Add some padding to the sides of the header */
     padding-bottom: 3vh;
-    transition: opacity 1s ease-out; /* Adjust the duration as needed */
+    transition: opacity 1s ease-out;
+    /* Adjust the duration as needed */
 }
 
 header .inner {
     width: 1300px;
     align-items: center;
     height: 100%;
-    display: flex; /* Change this from block to flex */
+    display: flex;
+    /* Change this from block to flex */
     margin: 0 auto;
 }
 
 header .logo {
-    display: flex; /* Change this from table to flex */
+    display: flex;
+    /* Change this from table to flex */
     position: static;
-    left:2vw;
+    left: 2vw;
     height: 100%;
-    align-items: center; /* Add this */
+    align-items: center;
+    /* Add this */
     color: white;
 }
 
-
 header .logo div {
     height: 100%;
-    display: flex; /* Change this from table-cell to flex */
-    align-items: center; /* Add this */
-    
+    display: flex;
+    /* Change this from table-cell to flex */
+    align-items: center;
+    /* Add this */
 }
 
 header .logo img {
@@ -947,7 +955,6 @@ header nav .button:hover {
     .video {
         display: none;
     }
-    
     .containerTitle {
         font-size: 1rem;
         font-weight: bold;
@@ -958,7 +965,6 @@ header nav .button:hover {
         margin-left: auto;
         margin-right: auto;
         width: 50%;
-       
     }
     .containerText {
         margin-top: 1rem;
@@ -994,7 +1000,8 @@ body {
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
     overflow: hidden;
     transition: height 0.3s ease-in-out;
-    background-color: rgba(255, 255, 255, 0.5); /* Slightly transparent white */
+    background-color: rgba(255, 255, 255, 0.5);
+    /* Slightly transparent white */
     /* Add this line */
 }
 
@@ -1109,14 +1116,14 @@ footer {
  :not(:defined)>* {
     display: none;
 }
+
 .fade-in {
     opacity: 1;
-  }
-  
-  .fade-out {
+}
+
+.fade-out {
     opacity: 0;
-  }
-  
+}
 
 .collapsible {
     background-color: #eee;

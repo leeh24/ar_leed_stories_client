@@ -129,7 +129,7 @@ export default function HumidityTempDetails() {
             <div className="temperature-humidity-container">
 
               <div className="tempInfo">
-                    <h2 style = {{textAlign:"center", color: 'white', textShadow: '1px 1px 2px black'}}>Temperature and Humidity</h2>
+                    <h2 style = {{textAlign:"center", color: 'white', textShadow: '1px 1px 2px black'}}>Thermal Comfort</h2>
               </div>
               <div className="temperature-graph-container">              
                 <div className="temperature-container">
@@ -139,19 +139,19 @@ export default function HumidityTempDetails() {
                   <div className="temperature-graph">
                     <Line data={temperatureLineData} options={lineOptions}/>
                     <br/>
-                    <h5>Temperature Over Day</h5>
-                    Outdoor
+                    <h5>Temperature over a 24 Hour Day Period</h5>
+                    Average Outdoor Air Temperature
                     <Switch
                       checked={checked}
                       onChange={handleChange}
                       inputProps={{ 'aria-label': 'Indoor Temperature' }}
                     />
-                    Indoor
+                    Average Indoor Air Temperature
                   </div>
                 </div>
                 <div className="humidity-container">
                   <div className="humidity">
-                    <p><b> Humidity: {humidity}% </b></p>
+                    <p><b> Outdoor Humidity: {humidity}% </b></p>
                   </div>
                   
                   <div className="humidity-graph">
@@ -166,10 +166,10 @@ export default function HumidityTempDetails() {
                                 trail: {
                                   strokeLinecap: 'butt',
                                   transform: 'rotate(-126deg)',
-                                  transformOrigin: 'center center',
+                                  transformOrigin: 'center center', 
                                   stroke: "#808080"
                                 },
-                                path: {
+                                path: { 
                                   strokeLinecap: 'butt',
                                   transform: 'rotate(-126deg)',
                                   transformOrigin: 'center center',
@@ -181,7 +181,7 @@ export default function HumidityTempDetails() {
                           />
                         )
                       }
-                    </BarBounds>
+                    </BarBounds> 
                   </div>
                     
                   
@@ -189,14 +189,14 @@ export default function HumidityTempDetails() {
                   </div>
               </div>
 
-            <img class="displayplans" src={plans}></img>
+            {/* <img class="displayplans" src={plans}></img>  
             </div>
             <div className="home">
             <div className="homeVideoContainer" >
                     <ImageSlider2 slides={SliderData} style={{ filter: 'blur(30px)'}} />
                 </div>
-                <img className="homePhoto" src={buildingPhoto} alt="Building" />
-            </div>
-        </>
+                <img className="homePhoto" src={buildingPhoto} alt="Building" /> */}
+            </div> 
+       </>
     );
 }

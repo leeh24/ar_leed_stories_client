@@ -42,7 +42,7 @@ export default function Header() {
                             </span></li>
                             <li><span>
                                 <NavLink to="/floor" activeClassName="activeLink" className="navButton" onMouseEnter={toggleDropdown} onMouseLeave={toggleDropdown}>
-                                    Humidity/Temperature
+                                    Thermal Comfort
                                     {isDropdownOpen && (
                                         <div className="dropdown-menu">
                                             <NavLink to="/floor" activeClassName="activeLink" className="dropdown-item">Floorplan View</NavLink>

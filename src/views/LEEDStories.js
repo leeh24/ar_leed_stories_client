@@ -69,7 +69,7 @@ useEffect(() => {
                         <h1>Solar Panels</h1>
                         <button ref={(el) => buttonRefs.current[1] = el} type="button" className="collapsible" onClick={() => toggleOpen(1)}>{isOpen[1] ? 'Collapse Text' : 'Expand for more info'}</button>
                         <div ref={(el) => contentRefs.current[1] = el} className={`content ${isOpen[1] ? 'open' : ''}`}>
-                        <p><strong>Reduction in Energy Use and Carbon Emissions</strong> - 80% less energy demand and 509 tons fewer CO2 operational emissions each year than an average similar building in the US.</p>
+                        <p><strong>Reduction in Energy Use and Carbon Emissions</strong> - 80% less energy demand and 509 tons fewer CO2 operational emissions each year than an average similar building. Avoiding 509 tons of CO2 emissions is significant, equivalent to preventing 570,000 pounds of coal from being burned each year.</p>
                         <ol>
                         <li data-list="ordered">1. 43.6kW solar panel array provide (first solar panels on campus!) will provide ~24% of the building's electrical supply over a year, and 15% of the total energy including gas.</li>
                         <li data-list="ordered">2. Efficient mechanical systems including a radiant hydronic floor delivering heating and cooling. Radiant systems are also more comfortable &nbsp;and healthier for the occupants than one that uses forced-air.</li>
