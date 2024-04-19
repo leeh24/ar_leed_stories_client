@@ -15,13 +15,13 @@ const FloorPlan1 = () => {
   });
 
   const [roomTempData, setRoomTempData] = useState({
-    SH152: { temperature: [83, 71, 77, 63, 75, 82, 67, 80, 66, 64, 89, 69]},
+    SH152: { temperature: [72, 71, 77, 63, 75, 82, 67, 80, 66, 64, 89, 69]},
     SH153: { temperature: [70, 78, 66, 85, 68, 61, 76, 87, 73, 62, 89, 81]},
-    SH154: { temperature: [86, 82, 72, 69, 63, 67, 74, 80, 88, 64, 77, 90]},
-    SH155: { temperature: [74, 83, 68, 79, 61, 65, 87, 81, 70, 89, 62, 84]},
-    SH156: { temperature: [78, 76, 88, 63, 82, 71, 69, 85, 67, 80, 62, 89]},
+    SH154: { temperature: [68, 82, 72, 69, 63, 67, 74, 80, 88, 64, 77, 90]},
+    SH155: { temperature: [73, 83, 68, 79, 61, 65, 87, 81, 70, 89, 62, 84]},
+    SH156: { temperature: [71, 76, 88, 63, 82, 71, 69, 85, 67, 80, 62, 89]},
     SH157: { temperature: [66, 80, 85, 63, 70, 82, 88, 61, 73, 78, 89, 67]},
-    SH158: { temperature: [81, 77, 86, 68, 90, 71, 83, 65, 79, 64, 62, 84]}
+    SH158: { temperature: [83, 77, 86, 68, 90, 71, 83, 65, 79, 64, 62, 84]}
   });
 
   const [error, setError] = useState(null);
@@ -35,13 +35,13 @@ const FloorPlan1 = () => {
   function loadRoomTemperatureDataOverDay(useDummyData) {
     if (useDummyData) {
         var dummyData = {
-          SH152: { temperature: [83, 71, 77, 63, 75, 82, 67, 80, 66, 64, 89, 69]},
+          SH152: { temperature: [72, 71, 77, 63, 75, 82, 67, 80, 66, 64, 89, 69]},
           SH153: { temperature: [70, 78, 66, 85, 68, 61, 76, 87, 73, 62, 89, 81]},
-          SH154: { temperature: [86, 82, 72, 69, 63, 67, 74, 80, 88, 64, 77, 90]},
-          SH155: { temperature: [74, 83, 68, 79, 61, 65, 87, 81, 70, 89, 62, 84]},
-          SH156: { temperature: [78, 76, 88, 63, 82, 71, 69, 85, 67, 80, 62, 89]},
-          SH157: { temperature: [66, 80, 85, 63, 70, 82, 88, 61, 73, 78, 89, 67]},
-          SH158: { temperature: [81, 77, 86, 68, 90, 71, 83, 65, 79, 64, 62, 84]}
+          SH154: { temperature: [68, 82, 72, 69, 63, 67, 74, 80, 88, 64, 77, 90]},
+          SH155: { temperature: [73, 83, 68, 79, 61, 65, 87, 81, 70, 89, 62, 84]},
+          SH156: { temperature: [71, 76, 88, 63, 82, 71, 69, 85, 67, 80, 62, 89]},
+          SH157: { temperature: [69, 80, 85, 63, 70, 82, 88, 61, 73, 78, 89, 67]},
+          SH158: { temperature: [83, 77, 86, 68, 90, 71, 83, 65, 79, 64, 62, 84]}
         };
         console.log(dummyData);
         setRoomTempData(dummyData);
