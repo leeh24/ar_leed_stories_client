@@ -214,37 +214,14 @@ export default function SolarDetails() {
         <>
             <Header />
             <body style={{ color: 'white', textShadow: '1px 1px 2px black', backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundColor: "rgba(255, 255, 255, 0)" }}>
-                <h1 style={{ textAlign: "center", color: "#7752b4" }}>Consumption of Electricity and Solar Energy</h1>
-
-                <br></br>
-
+                <h1 style={{ textAlign: "center", color: "#7752b4" }}>Energy Use and Renewables</h1>
                 <div className="solarInfo">
-                    <h3>How is the Shiley-Marcos building powered?</h3>
+                    <h3>About the Solar Array at the Shiley-Marcos Center</h3>
                     <p>
-                        This is a sentence solely used for filler content.
-                    </p>
-
-                    <p>
-                        abcdefghijklmnopqrstuvwxyz.
-                    </p>
-
-                    <h3>About the Solar Farm at the Shiley-Marcos Center</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend leo a mollis dapibus. Suspendisse 
-                        quis urna vel velit scelerisque semper rhoncus ut odio. Maecenas fringilla elit eu dignissim consectetur. Donec 
-                        felis ex, consequat sed sagittis non, posuere sit amet nulla. Quisque in suscipit arcu, non fermentum massa. 
-                        Donec nec euismod lectus. Maecenas ut massa nulla. Integer auctor dictum metus non finibus. Fusce purus turpis, 
-                        placerat et tristique sed, mattis a ipsum. Ut vitae viverra nibh, ac tincidunt ante.
-                    </p>
-                    
-                    <p>
-                        Nullam suscipit hendrerit convallis. Praesent magna ex, euismod aliquam sapien et, faucibus porta risus. Praesent 
-                        tincidunt et lacus sed sagittis. Sed quis pulvinar dolor. Aenean commodo vel nisl in aliquam. Donec pellentesque, 
-                        dolor rhoncus viverra dapibus, urna tortor aliquam arcu, nec tempus augue metus consequat nunc. Sed eu ipsum a tellus 
-                        egestas pretium. Maecenas eu turpis eget nisi fermentum egestas quis nec tortor. Proin feugiat sodales lorem et scelerisque. 
-                        Suspendisse nibh augue, elementum eget justo sed, rutrum laoreet lectus. In hac habitasse platea dictumst.   
-                    </p>
-                    
+                        The 43.6 kW solar panel array will provide approximately 24% of the building's electrical supply yearly.
+                        The array will be the first solar panels on campus, showing the University's commitment to renewable energy
+                        and reduced carbon emissions. The solar array was made possible by a generous donatiojn from Darlene Marcos Shiley.
+                    </p>          
                 </div>
 
                 <br></br>
