@@ -119,7 +119,7 @@ export default function AirQualityDetails() {
                
                 </div>
                 <div className="text-container" style={{backgroundColor: 'rgb(232,232,255,0.3)', padding: '20px', borderRadius: '10px'}}>
-                <h2 style={{color: 'black', textShadow: '1px 1px 2px black'}}>Interpreting Air Quality Index (AQI)</h2>
+                <h2 style={{color: 'black', textShadow: '1px 1px 2px white'}}>Interpreting Air Quality Index (AQI)</h2>
             <p style={{color: 'white', }}>The Air Quality Index (AQI) measures the quality of the air and its potential impact on health. Here's how to interpret the AQI:</p>
             <ul>
                 <li style={{color: 'white', }}><span style={{ color: '#008000', textShadow: '1px 1px 2px black' }}><strong>0-50:</strong> Good</span> - Air quality is satisfactory, and air pollution poses little or no risk.</li>
@@ -127,7 +127,7 @@ export default function AirQualityDetails() {
                 <li style={{color: 'white', }}><span style={{ color: '#de803e', textShadow: '1px 1px 2px black' }}><strong>101-150:</strong> Unhealthy for Sensitive Groups</span> - People with respiratory or heart conditions, children, and the elderly may experience health effects. General public is not likely to be affected.</li>
                 <li style={{color: 'white', }}><span style={{ color: '#e36e1b', textShadow: '1px 1px 2px black' }}><strong>151-200:</strong> Unhealthy </span>- Everyone may begin to experience health effects; sensitive individuals may experience more serious health effects.</li>
                 <li style={{color: 'white', }}><span style={{ color: '#e3401b', textShadow: '1px 1px 2px black' }}><strong>201-300:</strong> Very Unhealthy </span>- Health warnings of emergency conditions. The entire population is more likely to be affected.</li>
-                <li style={{color: 'white', }}><span style={{ color: '#691a14',  textShadow: '1px 1px 2px black' }}><strong>301 and above:</strong> Hazardous</span> - Health alert: everyone may experience more serious health effects.</li>
+                <li style={{color: 'white', }}><span style={{ color: '#f21111',  textShadow: '1px 1px 2px black' }}><strong>301 and above:</strong> Hazardous</span> - Health alert: everyone may experience more serious health effects.</li>
             </ul>
             <p style={{color: 'white',textShadow: '1px 1px 2px black' }}> <strong>Lower AQI values indicate better air quality, while higher values indicate poorer air quality and increased health risks.</strong></p>
         
