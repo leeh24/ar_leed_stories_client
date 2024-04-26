@@ -241,7 +241,7 @@ const FloorPlan2 = () => {
                 top: `${(13.9 / 100) * imageDimensions.width}px`,
                 width: `${(11 / 100) * imageDimensions.width}px`,
                 height: `${(42 / 100) * imageDimensions.height}px`,
-                backgroundColor: 'rgb(255, 255, 255, 0.5)', // Correct color format
+                backgroundColor: 'rgb(255, 255, 255, 1)', // Correct color format
                 clipPath: 'polygon(0 0, 0 41%, 23% 41%, 23% 100%, 66% 100%, 66% 88%, 100% 88%, 100% 0)',
                 border: '2px solid black', // Add border to the overlay
             }}
